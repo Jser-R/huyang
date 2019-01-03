@@ -1,0 +1,35 @@
+/**index.wxss**/
+.topWrap{
+    height: 442rpx;
+    background: #873647;
+    position:relitive
+}
+
+.topWrap .inner{
+    position: absolute;
+    left: 40rpx;
+    top:144rpx;
+    width:668rpx;
+    height:350rpx;
+    border-radius:20rpx;
+    background: #F8F8F8;
+}
+
+.topWrap .inner .avatar{
+    position: absolute;
+    left: 236rpx;
+    top:-98rpx;
+    width: 156rpx;
+    height: 156rpx;
+    background: #F8F8F8;
+    border-radius: 50%;
+    border: 20rpx #fff solid;
+}
+
+.topWrap .inner .content{
+    padding: 114rpx 20rpx 0 
+}
+
+.topWrap .inner .content view{
+    margin-bottom: 18rpx
+}

@@ -1,0 +1,18 @@
+<view class="topWrap">
+    <view  class="inner">
+
+        <view class='avatar'>
+
+    
+        </view>
+
+        <view class="content t_center">
+            <view class='f40 bold'>我是谁</view>
+            <view class='f28'>为了谁~~·</view>
+            <view class='f24 g9b'>“正确的做设计”比“做正确的设计重要的多”</view>
+        </view>
+
+    </view>
+
+
+</view>

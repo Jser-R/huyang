@@ -1,0 +1,18 @@
+/**app.wxss**/
+page{
+  color: #242424;
+  font-size: 20rpx
+} 
+
+
+
+.f22{font-size: 22rpx}
+.f24{font-size: 24rpx;line-height: 34rpx}
+.f28{font-size: 28rpx;line-height: 40rpx}
+.f40{font-size: 40rpx;line-height: 56rpx}
+
+.t_center{text-align: center}
+
+.bold{font-weight: bold}
+
+.g9b{color:#9B9B9B}
