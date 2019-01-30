@@ -10,8 +10,53 @@
             <view class='f28'>为了谁~~</view>
             <view class='f24 g9b'>“正确的做设计”比“做正确的设计重要的多”</view>
         </view>
-
     </view>
 
 
+</view>
+
+<!-- 问与答 -->
+ <view class="titleWrap">
+    <view>
+        <image src='/images/icon_01.png' class="icon"></image>
+        <view class='bold f28'>问与答</view>
+        <view class='f22'>Q&A</view>
+    </view>
+   
+    <view class='f24 g9b right'>已解答10个问题</view>
+ </view>
+
+<view class="content">
+    <view class="QAList f40">
+        <view wx:for="{{QAList}}" class="{{item.drop?'dropAnimation':item.className}}" catchtap='tap' data-index='{{index}}' data-item='{{item}}' wx:key="index">{{item.Q}}</view>
+    </view>
+</view>
+
+
+<!-- 工作经历 -->
+<view class="titleWrap">
+    <view>
+        <image src='/images/icon_02.png' class="icon"></image>
+        <view class='bold f28'>我的经历</view>
+        <view class='f22'>work experience</view>
+    </view>
+   
+    <view class='f24 g9b right'>已解答10个问题</view>
+ </view>
+<view class="content">
+   
+</view>
+
+<!-- 项目经历 -->
+<view class="titleWrap">
+    <view>
+        <image src='/images/icon_03.png' class="icon"></image>
+        <view class='bold f28'>有一个经历</view>
+        <view class='f22'>program experience</view>
+    </view>
+   
+ </view>
+
+ <view class="content">
+   
 </view>

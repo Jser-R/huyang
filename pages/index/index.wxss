@@ -2,7 +2,8 @@
 .topWrap{
     height: 442rpx;
     background: #873647;
-    position:relitive
+    position:relitive;
+    margin-bottom: 134rpx;
 }
 
 .topWrap .inner{
@@ -21,7 +22,7 @@
     top:-98rpx;
     width: 156rpx;
     height: 156rpx;
-    background: #F8F8F8;
+    background:#123343;
     border-radius: 50%;
     border: 20rpx #fff solid;
 }
@@ -32,4 +33,70 @@
 
 .topWrap .inner .content view{
     margin-bottom: 18rpx
+}
+
+
+/* 标题 */
+.titleWrap{
+    padding: 0 40rpx 0 122rpx;
+    height: 70rpx;
+    position: relative;
+    display: flex;
+    justify-content: space-between
+}
+
+.titleWrap .icon{
+    width: 70rpx;height: 70rpx;
+    position: absolute;
+    left: 36rpx;top:0;
+}
+
+.titleWrap .right{
+    padding: 16rpx 0 20rpx
+}
+
+/* 内容区 */
+.content{
+    margin-bottom: 110rpx
+}
+/* 问和答 */
+.QAList{
+
+    width: 700rpx;
+    height: 260rpx;
+    margin: 28rpx auto 0;
+    position: relative
+}
+.QAList view{
+    background: #fff;
+    width: 670rpx;
+    height: 210rpx;
+    position: absolute;
+    left: 15rpx;
+    top:25rpx;
+    border-radius: 8rpx;
+    box-shadow:0 0 20rpx 0 rgba(191,191,191,0.5);
+}
+
+.QAList .one{
+    /* background: blue; */
+    transform: rotate(-4deg)
+}
+
+.QAList .two{
+    /* background: red; */
+    transform: rotate(4deg)
+}
+
+.QAList .three{
+    transform: rotate(0)
+}
+
+
+.dropAnimation{
+    animation: drop .5s ease-in-out forwards
+}
+@keyframes drop{
+    0%{transform: translate(0,0)}
+    100%{transform: translate(900rpx,-300rpx) rotate(45deg)}
 }
