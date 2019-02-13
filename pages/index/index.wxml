@@ -18,7 +18,7 @@
 <!-- 问与答 -->
  <view class="titleWrap">
     <view>
-        <image src='/images/icon_01.png' class="icon"></image>
+        <image src='/images/icon/icon_01.png' class="icon"></image>
         <view class='bold f28'>问与答</view>
         <view class='f22'>Q&A</view>
     </view>
@@ -36,27 +36,74 @@
 <!-- 工作经历 -->
 <view class="titleWrap">
     <view>
-        <image src='/images/icon_02.png' class="icon"></image>
-        <view class='bold f28'>我的经历</view>
+        <image src='/images/icon/icon_02.png' class="icon"></image>
+        <view class='bold f28'>我的</view>
         <view class='f22'>work experience</view>
     </view>
    
     <view class='f24 g9b right'>已解答10个问题</view>
  </view>
+ <!-- 工作经历内容 -->
 <view class="content">
+    <scroll-view class='scrollX work' scroll-x>
+        <view>1111</view>
+        <view>1111</view>
+        <view>1111</view>
+    </scroll-view>
    
 </view>
 
 <!-- 项目经历 -->
 <view class="titleWrap">
     <view>
-        <image src='/images/icon_03.png' class="icon"></image>
-        <view class='bold f28'>有一个经历</view>
+        <image src='/images/icon/icon_03.png' class="icon"></image>
+        <view class='bold f28'>有一个</view>
         <view class='f22'>program experience</view>
     </view>
    
  </view>
 
- <view class="content">
+ <!-- 项目经历内容 -->
+<view class="content proList">
+    <block wx:for="{{proList}}" wx:key="{{index}}">
+        <view>
+            <image class="l" src='{{"/images/homePage/"+item.img}}'></image>
+            <view class="f28 bold title">{{item.name}}</view>
+            <view class="f24 g9b">{{item.introduce}}</view>
+        </view>
+    </block>
+</view>
+
+
+<!-- 平面设计 -->
+<view class="titleWrap">
+    <view>
+        <image src='/images/icon/icon_04.png' class="icon"></image>
+        <view class='bold f28'>平面设计</view>
+        <view class='f22'>plane design</view>
+    </view>
+   
+ </view>
+ <!-- 平面设计内容 -->
+<view class="content">
+    <scroll-view class='scrollX design' scroll-x>
+        <view>1111</view>
+        <view>1111</view>
+        <view>1111</view>
+    </scroll-view>
    
 </view>
+
+
+ <!-- 其他 -->
+<view class="titleWrap">
+    <view>
+        <image src='/images/icon/icon_04.png' class="icon"></image>
+        <view class='bold f28'>其他</view>
+        <view class='f22'>others</view>
+    </view>
+   
+ </view>
+
+
+ <menu></menu>

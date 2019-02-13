@@ -1,0 +1,33 @@
+/* component/menu/index.wxss */
+.mask{
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: .96;
+    display: none
+}
+
+.menu{
+    position: fixed;
+    bottom:176rpx;
+    right: 46rpx;
+}
+.menu_btn{
+    width: 132rpx;
+    height: 132rpx
+}
+
+.showMask{animation: showMask .3s forwards;display: block }
+.hideMask{animation: hideMask .3s forwards;}
+
+@keyframes showMask {
+    0%{opacity: 0;}
+    100%{opacity: .96;}
+}
+@keyframes hideMask {
+    0%{opacity: .96;}
+    100%{opacity: 0;}
+}

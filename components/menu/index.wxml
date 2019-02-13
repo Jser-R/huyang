@@ -1,0 +1,9 @@
+<!--component/menu/index.wxml-->
+<!-- 遮罩层 -->
+<view class="mask  {{isShowMask?'showMask':''}} " ></view>
+
+<!-- 菜单按钮 -->
+<view class="menu"> 
+
+    <image class="menu_btn" catchtap='toggleMenu' src='/images/icon/menu.png'></image>
+</view>

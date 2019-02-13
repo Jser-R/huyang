@@ -16,3 +16,4 @@ page{
 .bold{font-weight: bold}
 
 .g9b{color:#9B9B9B}
+.l{float: left}

@@ -100,3 +100,63 @@
     0%{transform: translate(0,0)}
     100%{transform: translate(900rpx,-300rpx) rotate(45deg)}
 }
+
+
+/* 内容区 */
+.scrollX{
+    overflow: hidden;
+    white-space: nowrap;
+}
+/* 工作经历内容 */
+.work {
+    padding-top: 40rpx
+}
+.work view:first-of-type{
+    margin-left: 40rpx
+}
+.work view{
+    width:510rpx;
+    height:304rpx;
+    background:rgba(30,74,226,1);
+    border-radius:20rpx;
+    display: inline-block;
+    margin-right: 20rpx
+}
+
+/* 项目经历内容 */
+.proList{
+    padding:6rpx 0 0 42rpx
+}
+.proList>view{
+    height:150rpx;
+    padding: 40rpx 0;
+    border-bottom: 2rpx #E9E9E9 solid
+}
+.proList image{
+    width:150rpx;
+    height:150rpx;
+    border-radius:20rpx;
+    border:2rpx solid rgba(151,151,151,1);
+    box-sizing: border-box;
+    margin-right: 20rpx;
+}
+.proList .title{
+    padding: 10rpx 0
+}
+
+/* 平面设计内容 */
+
+.design {
+    padding-top: 40rpx
+}
+.design view:first-of-type{
+    margin-left: 40rpx
+}
+.design view{
+    width:362rpx;
+    height:470rpx;
+    background:rgba(30,74,226,1);
+    border-radius:20rpx;
+    display: inline-block;
+    margin-right: 20rpx
+}
