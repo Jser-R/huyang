@@ -19,7 +19,6 @@ Page({
 
   },
     tap(e){
-
         const item = e.target.dataset.item;
         const index = e.target.dataset.index;
         const key = 'QAList[' + index + '].drop';
