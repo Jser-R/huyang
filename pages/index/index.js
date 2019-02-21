@@ -38,5 +38,13 @@ Page({
                 QAList: arr
             })
         },500)
+    },
+    toWorkDetail(){
+        wx.showToast({
+            title: '1',
+        })
+        // wx.showToast({
+        //     title:'1111'
+        // })
     }
 })

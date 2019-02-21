@@ -46,7 +46,7 @@
  <!-- 工作经历内容 -->
 <view class="content">
     <scroll-view class='scrollX work' scroll-x>
-        <view>1111</view>
+        <view bindtap='toWorkDetail'>1111</view>
         <view>1111</view>
         <view>1111</view>
     </scroll-view>

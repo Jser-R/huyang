@@ -7,7 +7,6 @@
     height: 100%;
     background: #fff;
     opacity: .96;
-    display: none
 }
 
 .menu{
@@ -17,17 +16,34 @@
 }
 .menu_btn{
     width: 132rpx;
-    height: 132rpx
+    height: 132rpx;
+    transform: rotate(90deg);
 }
 
-.showMask{animation: showMask .3s forwards;display: block }
+.menu_icon{
+    width: 144rpx;
+    height: 144rpx;
+}
+
+.showMask{animation: showMask .3s forwards;}
 .hideMask{animation: hideMask .3s forwards;}
 
 @keyframes showMask {
-    0%{opacity: 0;}
-    100%{opacity: .96;}
+    0%{opacity: 0;display: block }
+    100%{opacity: .96;display: block }
 }
 @keyframes hideMask {
-    0%{opacity: .96;}
-    100%{opacity: 0;}
+    0%{opacity: .96;display: block}
+    100%{opacity: 0;display: none}
+}
+/* 按钮旋转 */
+.rotate180{ animation: rotate180 .3s forwards;}
+.rotate90{ animation: rotate90 .3s forwards;}
+@keyframes rotate180 {
+    0%{transform: rotate(90deg)}
+    100%{transform: rotate(180deg)}
+}
+@keyframes rotate90 {
+    0%{transform: rotate(180deg)}
+    100%{transform: rotate(90deg)}
 }
