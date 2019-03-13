@@ -7,6 +7,7 @@
     height: 100%;
     background: #fff;
     opacity: .96;
+    display: none
 }
 
 .menu{
@@ -23,18 +24,23 @@
 .menu_icon{
     width: 144rpx;
     height: 144rpx;
+    /* display: none */
+}
+.menu_li{
+  display: none;
+  /* opacity: 0 */
 }
 
-.showMask{animation: showMask .3s forwards;}
+.showMask{animation: showMask .3s forwards;display: block }
 .hideMask{animation: hideMask .3s forwards;}
 
 @keyframes showMask {
-    0%{opacity: 0;display: block }
-    100%{opacity: .96;display: block }
+    0%{opacity: 0;}
+    100%{opacity: .96; }
 }
 @keyframes hideMask {
-    0%{opacity: .96;display: block}
-    100%{opacity: 0;display: none}
+    0%{opacity: .96;}
+    100%{opacity: 0;}
 }
 /* 按钮旋转 */
 .rotate180{ animation: rotate180 .3s forwards;}

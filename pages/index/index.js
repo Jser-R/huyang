@@ -4,15 +4,21 @@ const app = getApp()
 
 Page({
   data: {
+    navIndex:0,
+    nav:[
+      {name:'工作经历'},
+      {name:'项目经历'},
+      {name:'平面设计'},
+    ],
      QAList: [
          { Q: '1', drop:false, className:'one'},
          { Q: '2', drop: false, className: 'two'},
          { Q: '3', drop: false, className: 'three'}
         ],
-        proList: [
-            { name: '陈真', introduce: '电商网站', img: 'pro_01.png' },
-            { name: '陈真', introduce: '电商网站', img: 'pro_01.png' },
-        ]
+      proList: [
+        { name: '陈真弄潮儿小程序', introduce: 'UX：主要负责B端C端用户小程序、陈真商城及H5的界面 设计/迭代，参与初期产品设定', img: 'pro_01.png', time:'2016.11-2019.02' },
+        { name: '陈真弄潮儿小程序', introduce: 'UX：主要负责B端C端用户小程序、陈真商城及H5的界面 设计/迭代，参与初期产品设定', img: 'pro_01.png', time: '2016.11-2019.02' },
+      ]
   },
 
   onLoad: function () {
@@ -37,6 +43,13 @@ Page({
                 QAList: arr
             })
         },500)
+    },
+    changeNav(e){
+      const index = e.target.dataset.index;
+      console.log(index)
+      this.setData({
+        navIndex: index
+      })
     },
     toWorkDetail(){
         wx.showToast({

@@ -1,109 +1,129 @@
 <view class="topWrap">
     <view  class="inner">
 
-        <view class='avatar'>
-    
-        </view>
+        <view class='avatar'></view>
 
         <view class="content t_center">
-            <view class='f40 bold'>我是谁</view>
-            <view class='f28'>为了谁~~</view>
-            <view class='f24 g9b'>“正确的做设计”比“做正确的设计重要的多”</view>
+            <view><image src="/images/homePage/name.png"/></view>
+            <view class='f28 bold'>5年+工作经验</view>
+            <view class='f24'>“正确的做设计”比“做正确的设计重要的多”</view>
         </view>
     </view>
 
 
 </view>
 
-<!-- 问与答 -->
- <view class="titleWrap">
+<view class="contentWrap">
+  <!-- 问与答 -->
+  <view class="titleWrap">
     <view>
-        <image src='/images/icon/icon_01.png' class="icon"></image>
-        <view class='bold f28'>问与答</view>
-        <view class='f22'>Q&A</view>
+      <view class='bold f28'>问与答</view>
+      <view class='f22'>Q&A</view>
     </view>
-   
-    <view class='f24 g9b right'>已解答10个问题</view>
- </view>
 
-<view class="content">
+    <view class='f24 g9b right'>已解答10个问题</view>
+  </view>
+
+  <view class="content">
     <view class="QAList f40">
-        <view wx:for="{{QAList}}" class="{{item.drop?'dropAnimation':item.className}}" catchtap='tap' data-index='{{index}}' data-item='{{item}}' wx:key="index">{{item.Q}}</view>
+      <view wx:for="{{QAList}}" class="{{item.drop?'dropAnimation':item.className}}" catchtap='tap' data-index='{{index}}' data-item='{{item}}' wx:key="index">{{item.Q}}</view>
     </view>
+  </view>
+
+  <view class="nav f28 grey9">
+    <view wx:for="{{nav}}"
+          wx:key="{{index}}"
+          class="{{navIndex === index?'active':''}}"
+          data-index='{{index}}'
+          bindtap='changeNav'>{{item.name}}</view>
+  </view>
+
 </view>
 
+
+<view class="navContent">
+  <block wx:for="{{proList}}" wx:key="{{index}}">
+    <view>
+      <image src='https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/programs/pro_01.png?sign=d9dc2e7a36bfb42b8c4ee03bf0856895&t=1552488323'></image>
+      <view class="f34 bold title">{{item.name}}</view>
+      <view class='f24 grey9 introduce'>{{item.introduce}}</view>
+      <view class='f24 time'>{{item.time}}</view>
+    </view>
+
+  </block>
+</view>
 
 <!-- 工作经历 -->
-<view class="titleWrap">
-    <view>
-        <image src='/images/icon/icon_02.png' class="icon"></image>
-        <view class='bold f28'>我的</view>
-        <view class='f22'>work experience</view>
-    </view>
-   
-    <view class='f24 g9b right'>已解答10个问题</view>
- </view>
- <!-- 工作经历内容 -->
-<view class="content">
-    <scroll-view class='scrollX work' scroll-x>
-        <view bindtap='toWorkDetail'>1111</view>
-        <view>1111</view>
-        <view>1111</view>
-    </scroll-view>
-   
-</view>
+<!--<view class="titleWrap">-->
+    <!--<view>-->
+        <!--<image src='/images/icon/icon_02.png' class="icon"></image>-->
+        <!--<view class='bold f28'>我的</view>-->
+        <!--<view class='f22'>work experience</view>-->
+    <!--</view>-->
+   <!---->
+    <!--<view class='f24 g9b right'>已解答10个问题</view>-->
+ <!--</view>-->
+ <!--&lt;!&ndash; 工作经历内容 &ndash;&gt;-->
+<!--<view class="content">-->
+    <!--<scroll-view class='scrollX work' scroll-x>-->
+        <!--<view bindtap='toWorkDetail'>1111</view>-->
+        <!--<view>1111</view>-->
+        <!--<view>1111</view>-->
+    <!--</scroll-view>-->
+   <!---->
+<!--</view>-->
 
-<!-- 项目经历 -->
-<view class="titleWrap">
-    <view>
-        <image src='/images/icon/icon_03.png' class="icon"></image>
-        <view class='bold f28'>有一个</view>
-        <view class='f22'>program experience</view>
-    </view>
-   
- </view>
+<!--&lt;!&ndash; 项目经历 &ndash;&gt;-->
+<!--<view class="titleWrap">-->
+    <!--<view>-->
+        <!--<image src='/images/icon/icon_03.png' class="icon"></image>-->
+        <!--<view class='bold f28'>有一个</view>-->
+        <!--<view class='f22'>program experience</view>-->
+    <!--</view>-->
+   <!---->
+ <!--</view>-->
 
- <!-- 项目经历内容 -->
-<view class="content proList">
-    <block wx:for="{{proList}}" wx:key="{{index}}">
-        <view>
-            <image class="l" src='{{"/images/homePage/"+item.img}}'></image>
-            <view class="f28 bold title">{{item.name}}</view>
-            <view class="f24 g9b">{{item.introduce}}</view>
-        </view>
-    </block>
-</view>
-
-
-<!-- 平面设计 -->
-<view class="titleWrap">
-    <view>
-        <image src='/images/icon/icon_04.png' class="icon"></image>
-        <view class='bold f28'>平面设计</view>
-        <view class='f22'>plane design</view>
-    </view>
-   
- </view>
- <!-- 平面设计内容 -->
-<view class="content">
-    <scroll-view class='scrollX design' scroll-x>
-        <view>1111</view>
-        <view>1111</view>
-        <view>1111</view>
-    </scroll-view>
-   
-</view>
+ <!--&lt;!&ndash; 项目经历内容 &ndash;&gt;-->
+<!--<view class="content proList">-->
+    <!--<block wx:for="{{proList}}" wx:key="{{index}}">-->
+        <!--<view>-->
+            <!--<image class="l" src='{{"/images/homePage/"+item.img}}'></image>-->
+            <!--<view class="f28 bold title">{{item.name}}</view>-->
+            <!--<view class="f24 g9b">{{item.introduce}}</view>-->
+        <!--</view>-->
+    <!--</block>-->
+<!--</view>-->
 
 
- <!-- 其他 -->
-<view class="titleWrap">
-    <view>
-        <image src='/images/icon/icon_04.png' class="icon"></image>
-        <view class='bold f28'>其他</view>
-        <view class='f22'>others</view>
-    </view>
-   
- </view>
+<!--&lt;!&ndash; 平面设计 &ndash;&gt;-->
+<!--<view class="titleWrap">-->
+    <!--<view>-->
+        <!--<image src='/images/icon/icon_04.png' class="icon"></image>-->
+        <!--<view class='bold f28'>平面设计</view>-->
+        <!--<view class='f22'>plane design</view>-->
+    <!--</view>-->
+   <!---->
+ <!--</view>-->
+ <!--&lt;!&ndash; 平面设计内容 &ndash;&gt;-->
+<!--<view class="content">-->
+    <!--<scroll-view class='scrollX design' scroll-x>-->
+        <!--<view>1111</view>-->
+        <!--<view>1111</view>-->
+        <!--<view>1111</view>-->
+    <!--</scroll-view>-->
+   <!---->
+<!--</view>-->
+
+
+ <!--&lt;!&ndash; 其他 &ndash;&gt;-->
+<!--<view class="titleWrap">-->
+    <!--<view>-->
+        <!--<image src='/images/icon/icon_04.png' class="icon"></image>-->
+        <!--<view class='bold f28'>其他</view>-->
+        <!--<view class='f22'>others</view>-->
+    <!--</view>-->
+   <!---->
+ <!--</view>-->
 
 
  <menu></menu>

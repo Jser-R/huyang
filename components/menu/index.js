@@ -11,8 +11,7 @@ Component({
      * 组件的初始数据
      */
     data: {
-        isShowMask:false,
-        animationFlag:true,
+        animationFlag:false,
         menuList:[
             { icon:'menu_01.png'},
             { icon: 'menu_02.png' },
@@ -26,7 +25,7 @@ Component({
      */
     methods: {
         toggleMenu(){
-            const flag = this.data.isShowMask
+          const flag = this.data.animationFlag
             if (flag){
                 this.hide()
             }else{
@@ -36,16 +35,12 @@ Component({
         },
         show() {
             this.setData({
-                isShowMask: true,
                 animationFlag: true
             });
         },
         hide() {
             const _this = this;
             _this.setData({ animationFlag: false });
-            // setTimeout(function () {
-                _this.setData({ isShowMask: false })
-            // }, 300)
 
         }
 

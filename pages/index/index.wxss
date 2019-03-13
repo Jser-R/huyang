@@ -1,162 +1,168 @@
 /**index.wxss**/
 .topWrap{
-    height: 442rpx;
-    background: #873647;
-    position:relitive;
-    margin-bottom: 134rpx;
+  height: 442rpx;
+  background: #873647;
+  position:relitive;
 }
 
 .topWrap .inner{
-    position: absolute;
-    left: 40rpx;
-    top:144rpx;
-    width:668rpx;
-    height:350rpx;
-    border-radius:20rpx;
-    background: #F8F8F8;
+  position: absolute;
+  left: 50%;
+  top:184rpx;
+  width:668rpx;
+  height:334rpx;
+  transform: translateX(-50%);
+  background:#fff;
+  box-shadow:0 2rpx 40rpx 0 rgba(155,155,155,0.21);
+  border-radius:20rpx;
 }
 
 .topWrap .inner .avatar{
-    position: absolute;
-    left: 236rpx;
-    top:-98rpx;
-    width: 156rpx;
-    height: 156rpx;
-    background:#123343;
-    border-radius: 50%;
-    border: 20rpx #fff solid;
+  position: absolute;
+  left: 246rpx;
+  top:-98rpx;
+  width: 176rpx;
+  height: 176rpx;
+  border-radius: 50%;
+  border:10rpx #000 solid;
+  background: url('https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/homePage/avatar.png?sign=f12696ccdec73aa850693058cbf83458&t=1552487024') no-repeat left center;
+  background-size:  176rpx;
 }
 
 .topWrap .inner .content{
-    padding: 114rpx 20rpx 0 
+  padding: 116rpx 20rpx 62rpx
+}
+.topWrap .inner .content image{
+  width: 230rpx;
+  height: 44rpx;
+  margin-bottom: 24rpx
 }
 
 .topWrap .inner .content view{
-    margin-bottom: 18rpx
+  margin-bottom: 18rpx
 }
 
-
+/**/
+.contentWrap{
+  padding-top: 130rpx;
+  box-shadow:0 2rpx 20rpx 0 rgba(0,0,0,0.1);
+}
 /* 标题 */
 .titleWrap{
-    padding: 0 40rpx 0 122rpx;
-    height: 70rpx;
-    position: relative;
-    display: flex;
-    justify-content: space-between
+  padding: 0 40rpx 0 128rpx;
+  height: 70rpx;
+  /* position: relative; */
+  display: flex;
+  justify-content: space-between;
+  background: url('https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/icon_01.png?sign=1bf7796bba00ed8e46d31d7bc7a7104e&t=1552487912') no-repeat 36rpx center;
+  background-size: 70rpx
 }
 
-.titleWrap .icon{
-    width: 70rpx;height: 70rpx;
-    position: absolute;
-    left: 36rpx;top:0;
-}
+/* .titleWrap .icon{
+  width: 70rpx;height: 70rpx;
+  position: absolute;
+  left: 36rpx;top:0;
+} */
 
 .titleWrap .right{
-    padding: 16rpx 0 20rpx
+  padding: 16rpx 0 20rpx
 }
 
 /* 内容区 */
 .content{
-    margin-bottom: 110rpx
+  margin-bottom: 80rpx
 }
 /* 问和答 */
 .QAList{
-
-    width: 700rpx;
-    height: 260rpx;
-    margin: 28rpx auto 0;
-    position: relative
+  width: 700rpx;
+  height: 260rpx;
+  margin: 28rpx auto 0;
+  position: relative
 }
 .QAList view{
-    background: #fff;
-    width: 670rpx;
-    height: 210rpx;
-    position: absolute;
-    left: 15rpx;
-    top:25rpx;
-    border-radius: 8rpx;
-    box-shadow:0 0 20rpx 0 rgba(191,191,191,0.5);
+  background: #fff;
+  width: 670rpx;
+  height: 210rpx;
+  position: absolute;
+  left: 15rpx;
+  top:25rpx;
+  border-radius: 8rpx;
+  box-shadow:0 0 20rpx 0 rgba(191,191,191,0.5);
 }
 
 .QAList .one{
-    /* background: blue; */
-    transform: rotate(-4deg)
+  /* background: blue; */
+  transform: rotate(-4deg)
 }
 
 .QAList .two{
-    /* background: red; */
-    transform: rotate(4deg)
+  /* background: red; */
+  transform: rotate(4deg)
 }
 
 .QAList .three{
-    transform: rotate(0)
+  transform: rotate(0)
 }
 
 
 .dropAnimation{
-    animation: drop .5s ease-in-out forwards
+  animation: drop .5s ease-in-out forwards
 }
 @keyframes drop{
-    0%{transform: translate(0,0)}
-    100%{transform: translate(900rpx,-300rpx) rotate(45deg)}
+  0%{transform: translate(0,0)}
+  100%{transform: translate(900rpx,-300rpx) rotate(45deg)}
+}
+
+/*导航区*/
+.nav{
+  padding:20rpx 70rpx 0;
+  display: flex;
+  justify-content: space-between;
+
+}
+.nav view{
+  padding-bottom: 60rpx;
+  /* transition: .3s */
+}
+.nav .active{
+  font-size: 32rpx;
+  color: #000;
+  font-weight: bold;
+  background: url('https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/icon_path.png?sign=241e348939d05ba796cfd5b4558b60fd&t=1552487299') no-repeat center 50rpx;
+  background-size: 52rpx;
 }
 
 
+/* 导航内容区 */
+.navContent{
+  padding: 60rpx 60rpx 0;
+
+}
+.navContent>view{
+  margin-bottom: 140rpx
+}
+.navContent image{
+
+  height:460rpx;
+  border-radius:20rpx;
+  margin-bottom:30rpx
+}
+
+.navContent .title{
+  margin-bottom: 18rpx
+}
+.navContent .introduce{
+  margin-bottom: 22rpx
+}
+
+.navContent .time{
+  color: #4A78E2;
+  background: url('https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/icon_calendar.png?sign=9bab503c8443621d5b3f787b1109f33c&t=1552488822') no-repeat left center;
+  background-size: 32rpx;
+  padding-left: 40rpx
+}
 /* 内容区 */
 .scrollX{
-    overflow: hidden;
-    white-space: nowrap;
-}
-/* 工作经历内容 */
-.work {
-    padding-top: 40rpx
-}
-.work view:first-of-type{
-    margin-left: 40rpx
-}
-.work view{
-    width:510rpx;
-    height:304rpx;
-    background:rgba(30,74,226,1);
-    border-radius:20rpx;
-    display: inline-block;
-    margin-right: 20rpx
-}
-
-/* 项目经历内容 */
-.proList{
-    padding:6rpx 0 0 42rpx
-}
-.proList>view{
-    height:150rpx;
-    padding: 40rpx 0;
-    border-bottom: 2rpx #E9E9E9 solid
-}
-.proList image{
-    width:150rpx;
-    height:150rpx;
-    border-radius:20rpx;
-    border:2rpx solid rgba(151,151,151,1);
-    box-sizing: border-box;
-    margin-right: 20rpx;
-}
-.proList .title{
-    padding: 10rpx 0
-}
-
-/* 平面设计内容 */
-
-.design {
-    padding-top: 40rpx
-}
-.design view:first-of-type{
-    margin-left: 40rpx
-}
-.design view{
-    width:362rpx;
-    height:470rpx;
-    background:rgba(30,74,226,1);
-    border-radius:20rpx;
-    display: inline-block;
-    margin-right: 20rpx
+  overflow: hidden;
+  white-space: nowrap;
 }
