@@ -10,10 +10,11 @@
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
-		"uglifyFileName": false
+		"uglifyFileName": false,
+		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.5.1",
+	"libVersion": "2.6.1",
 	"appid": "wx32ce446313d18fec",
 	"projectname": "huyang",
 	"debugOptions": {

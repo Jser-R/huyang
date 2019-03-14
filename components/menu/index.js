@@ -31,7 +31,7 @@ Component({
             }else{
                 this.show()
             }
-    
+
         },
         show() {
             this.setData({

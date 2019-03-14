@@ -3,7 +3,7 @@
 <text class="mask {{animationFlag?'showMask':'hideMask'}}" ></text>
 
 <!-- 菜单按钮 -->
-<view class="menu"> 
+<view class="menu">
     <block wx:for="{{menuList}}" wx:key='{{index}}'>
         <view class="menu_li {{animationFlag?'showMask':'hideMask'}}">
             <image class="menu_icon"  src='{{"/images/icon/"+item.icon}}'></image>
