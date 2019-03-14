@@ -162,7 +162,4 @@
   padding-left: 40rpx
 }
 /* 内容区 */
-.scrollX{
-  overflow: hidden;
-  white-space: nowrap;
-}
+

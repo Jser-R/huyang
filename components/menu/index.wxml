@@ -11,6 +11,5 @@
     
     </block>
     
-    
     <image class="menu_btn  {{animationFlag?'rotate180':'rotate90'}} " catchtap='toggleMenu' src='/images/icon/menu.png'></image>
 </view>

@@ -8,8 +8,10 @@ page{
 
 .f22{font-size: 22rpx}
 .f24{font-size: 24rpx;line-height: 34rpx}
+.f26{font-size: 26rpx;line-height: 36rpx}
 .f28{font-size: 28rpx;line-height: 40rpx}
 .f34{font-size: 34rpx;line-height: 48rpx}
+.f36{font-size: 34rpx;line-height: 36rpx}
 .f40{font-size: 40rpx;line-height: 56rpx}
 
 .t_center{text-align: center}
@@ -19,3 +21,8 @@ page{
 .g9b{color:#9B9B9B}
 .grey9{color:#999}
 .l{float: left}
+
+.scrollX{
+  overflow: hidden;
+  white-space: nowrap;
+}

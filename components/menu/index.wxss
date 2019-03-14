@@ -18,7 +18,7 @@
 .menu_btn{
     width: 132rpx;
     height: 132rpx;
-    transform: rotate(90deg);
+    /*transform: rotate(90deg);*/
 }
 
 .menu_icon{
@@ -46,10 +46,10 @@
 .rotate180{ animation: rotate180 .3s forwards;}
 .rotate90{ animation: rotate90 .3s forwards;}
 @keyframes rotate180 {
-    0%{transform: rotate(90deg)}
-    100%{transform: rotate(180deg)}
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(90deg)}
 }
 @keyframes rotate90 {
-    0%{transform: rotate(180deg)}
-    100%{transform: rotate(90deg)}
+    0%{transform: rotate(90deg)}
+    100%{transform: rotate(0deg)}
 }

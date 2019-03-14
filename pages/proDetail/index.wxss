@@ -1,0 +1,105 @@
+/* pages/proDetail/index.wxss */
+.bg{
+    height: 200rpx;
+    background: #000000;
+}
+/*******************公司内容************************/
+.topWrap{
+    width:690rpx;
+    height:326rpx;
+    box-sizing: border-box;
+    padding: 30rpx 30rpx 0;
+    background:#fff;
+    box-shadow:0 4rpx 20rpx 0 rgba(0,0,0,0.1);
+    border-radius:20rpx;
+    margin: -158rpx  auto 30rpx;
+}
+.topWrap .top{
+    height: 116rpx;
+    margin-bottom: 56rpx;
+}
+
+.topWrap .top .logo{
+    width: 116rpx;
+    height: 116rpx;
+    margin-right: 30rpx;
+}
+.topWrap .top .title{
+    padding: 12rpx 0 16rpx;
+
+}
+
+.topWrap .bot{
+    display: flex;
+}
+.topWrap .bot .item{
+    width: 222rpx;
+    position: relative;
+}
+.topWrap .bot .item:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top:18rpx;
+    width:2rpx;
+    height:42rpx;
+    background: #e9e9e9;
+
+}
+
+.topWrap .bot .item:last-child:after{
+    background: none;
+}
+/*******************************************/
+
+
+/********************工作经历内容***********************/
+.contentWrap{
+
+}
+
+/*版本轮播*/
+.versionsSwiper .programVersion{
+    line-height: 56rpx;
+    padding: 0 40rpx 0 74rpx;
+    background: url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/icon_mobile.png?sign=c7da599d166870541526bdec0c0826fa&t=1552542418")
+ no-repeat 36rpx center;
+    background-size: 20rpx;
+    position: relative;
+}
+.versionsSwiper .programVersion .swiperNum{
+    height: 56rpx;
+    line-height: 56rpx;
+    position: absolute;
+    right: 40rpx;
+    top:0;
+    color: #000;
+}
+/*.versionsSwiper .programVersion .swiperNum text{*/
+/*font-size: 40rpx;*/
+/*}*/
+/*.versionsSwiper .scrollX{*/
+    /*height: 724rpx;*/
+/*}*/
+.versionsSwiper .scrollX .imageItem{
+    /*width: 376rpx!important;*/
+    /*height: 664rpx!important;*/
+    display: inline-block;
+    padding: 30rpx 15rpx;
+    /*box-shadow:0 4rpx 20rpx 0 rgba(0,0,0,0.1);*/
+
+}
+.versionsSwiper .scrollX .imageItem:first-child{
+    padding: 30rpx 15rpx  30rpx 38rpx;
+}
+.versionsSwiper .scrollX .imageItem:last-child{
+    padding: 30rpx 300rpx  30rpx 15rpx;
+}
+.versionsSwiper .scrollX .imageItem image{
+    width: 376rpx;
+    height: 664rpx;
+    border-radius: 20rpx;
+    box-shadow:0 4rpx 20rpx 0 rgba(0,0,0,0.1);
+}
+
+

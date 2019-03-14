@@ -51,6 +51,12 @@ Page({
         navIndex: index
       })
     },
+    toDetail(e){
+        const item = e.target.dataset.item;
+        wx.navigateTo({
+            url: '/pages/proDetail/index',
+        })
+    },
     toWorkDetail(){
         wx.showToast({
             title: '1',

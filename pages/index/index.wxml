@@ -43,7 +43,7 @@
 
 <view class="navContent">
   <block wx:for="{{proList}}" wx:key="{{index}}">
-    <view>
+    <view bindtap='toDetail' data-item='{{item}}'>
       <image src='https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/programs/pro_01.png?sign=d9dc2e7a36bfb42b8c4ee03bf0856895&t=1552488323'></image>
       <view class="f34 bold title">{{item.name}}</view>
       <view class='f24 grey9 introduce'>{{item.introduce}}</view>
@@ -53,77 +53,7 @@
   </block>
 </view>
 
-<!-- 工作经历 -->
-<!--<view class="titleWrap">-->
-    <!--<view>-->
-        <!--<image src='/images/icon/icon_02.png' class="icon"></image>-->
-        <!--<view class='bold f28'>我的</view>-->
-        <!--<view class='f22'>work experience</view>-->
-    <!--</view>-->
-   <!---->
-    <!--<view class='f24 g9b right'>已解答10个问题</view>-->
- <!--</view>-->
- <!--&lt;!&ndash; 工作经历内容 &ndash;&gt;-->
-<!--<view class="content">-->
-    <!--<scroll-view class='scrollX work' scroll-x>-->
-        <!--<view bindtap='toWorkDetail'>1111</view>-->
-        <!--<view>1111</view>-->
-        <!--<view>1111</view>-->
-    <!--</scroll-view>-->
-   <!---->
-<!--</view>-->
 
-<!--&lt;!&ndash; 项目经历 &ndash;&gt;-->
-<!--<view class="titleWrap">-->
-    <!--<view>-->
-        <!--<image src='/images/icon/icon_03.png' class="icon"></image>-->
-        <!--<view class='bold f28'>有一个</view>-->
-        <!--<view class='f22'>program experience</view>-->
-    <!--</view>-->
-   <!---->
- <!--</view>-->
-
- <!--&lt;!&ndash; 项目经历内容 &ndash;&gt;-->
-<!--<view class="content proList">-->
-    <!--<block wx:for="{{proList}}" wx:key="{{index}}">-->
-        <!--<view>-->
-            <!--<image class="l" src='{{"/images/homePage/"+item.img}}'></image>-->
-            <!--<view class="f28 bold title">{{item.name}}</view>-->
-            <!--<view class="f24 g9b">{{item.introduce}}</view>-->
-        <!--</view>-->
-    <!--</block>-->
-<!--</view>-->
-
-
-<!--&lt;!&ndash; 平面设计 &ndash;&gt;-->
-<!--<view class="titleWrap">-->
-    <!--<view>-->
-        <!--<image src='/images/icon/icon_04.png' class="icon"></image>-->
-        <!--<view class='bold f28'>平面设计</view>-->
-        <!--<view class='f22'>plane design</view>-->
-    <!--</view>-->
-   <!---->
- <!--</view>-->
- <!--&lt;!&ndash; 平面设计内容 &ndash;&gt;-->
-<!--<view class="content">-->
-    <!--<scroll-view class='scrollX design' scroll-x>-->
-        <!--<view>1111</view>-->
-        <!--<view>1111</view>-->
-        <!--<view>1111</view>-->
-    <!--</scroll-view>-->
-   <!---->
-<!--</view>-->
-
-
- <!--&lt;!&ndash; 其他 &ndash;&gt;-->
-<!--<view class="titleWrap">-->
-    <!--<view>-->
-        <!--<image src='/images/icon/icon_04.png' class="icon"></image>-->
-        <!--<view class='bold f28'>其他</view>-->
-        <!--<view class='f22'>others</view>-->
-    <!--</view>-->
-   <!---->
- <!--</view>-->
 
 
  <menu></menu>
