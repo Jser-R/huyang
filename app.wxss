@@ -21,8 +21,29 @@ page{
 .g9b{color:#9B9B9B}
 .grey9{color:#999}
 .l{float: left}
+.r{float: right}
 
 .scrollX{
   overflow: hidden;
   white-space: nowrap;
+}
+
+.line{
+  border-bottom: 1rpx rgba(187, 187, 187, 0.5) solid;
+}
+
+.line-block{
+  margin: 0 40rpx;
+  height: 1rpx;
+  background: rgba(187, 187, 187, 0.5);
+}
+
+
+.fourClamp {
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical
 }

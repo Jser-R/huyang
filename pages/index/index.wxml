@@ -4,7 +4,7 @@
         <view class='avatar'></view>
 
         <view class="content t_center">
-            <view><image src="/images/homePage/name.png"/></view>
+            <view><image src="/images/homePage/name.png" lazy-load/></view>
             <view class='f28 bold'>5年+工作经验</view>
             <view class='f24'>“正确的做设计”比“做正确的设计重要的多”</view>
         </view>
@@ -44,7 +44,7 @@
 <view class="navContent">
   <block wx:for="{{proList}}" wx:key="{{index}}">
     <view bindtap='toDetail' data-item='{{item}}'>
-      <image src='https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/programs/pro_01.png?sign=d9dc2e7a36bfb42b8c4ee03bf0856895&t=1552488323'></image>
+      <image src='https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/programs/pro_01.png?sign=d9dc2e7a36bfb42b8c4ee03bf0856895&t=1552488323' lazy-load></image>
       <view class="f34 bold title">{{item.name}}</view>
       <view class='f24 grey9 introduce'>{{item.introduce}}</view>
       <view class='f24 time'>{{item.time}}</view>

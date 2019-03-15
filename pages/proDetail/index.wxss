@@ -59,6 +59,9 @@
 }
 
 /*版本轮播*/
+.versionsSwiper{
+    padding-bottom: 30rpx;
+}
 .versionsSwiper .programVersion{
     line-height: 56rpx;
     padding: 0 40rpx 0 74rpx;
@@ -66,6 +69,11 @@
  no-repeat 36rpx center;
     background-size: 20rpx;
     position: relative;
+}
+.versionsSwiper .programVersion .arrow{
+    width: 22rpx;
+    height: 14rpx;
+    margin-top: 20rpx;
 }
 .versionsSwiper .programVersion .swiperNum{
     height: 56rpx;
@@ -75,12 +83,6 @@
     top:0;
     color: #000;
 }
-/*.versionsSwiper .programVersion .swiperNum text{*/
-/*font-size: 40rpx;*/
-/*}*/
-/*.versionsSwiper .scrollX{*/
-    /*height: 724rpx;*/
-/*}*/
 .versionsSwiper .scrollX .imageItem{
     /*width: 376rpx!important;*/
     /*height: 664rpx!important;*/
@@ -101,5 +103,24 @@
     border-radius: 20rpx;
     box-shadow:0 4rpx 20rpx 0 rgba(0,0,0,0.1);
 }
+
+
+/*工作内容*/
+.wrap{
+    padding: 0 40rpx;
+}
+.h2{
+    font-size: 36rpx;
+    line-height: 32rpx;
+    padding: 60rpx 0 50rpx;
+    font-weight: bold;
+}
+.content{
+    padding-bottom: 60rpx;
+}
+
+
+
+
 
 

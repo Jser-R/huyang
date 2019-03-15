@@ -24,12 +24,14 @@
   
   <!--作品内容区-->
   <view class="versionsSwiper">
-	<block  wx:for="{{proDetail.programArr.versions}}" wx:key="{{index}}">
+	<block  wx:for="{{proDetail.programArr}}" wx:key="{{index}}">
 	  <view class="programVersion f26 grey9"
 			bindtap="slideUpVersion"
 			data-item="{{item}}"
 			data-index="{{index}}">
 		{{item.version}} iPhone
+		<image class="arrow r" hidden="{{!item.hidden}}"
+			   src="https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/arrow_down_grey.png?sign=c2e33c3bc7e99c794ffa57a0dbb8bc50&t=1552626665" ></image>
 		<view class="swiperNum f40 bold"  hidden="{{item.hidden}}">{{item.activeIndex}}/<text class="f28">{{item.images.length}}</text></view>
 	  </view>
 	  <scroll-view class='scrollX work' scroll-x
@@ -49,6 +51,19 @@
 	</block>
 	
   </view>
+  <view class="line-block"></view>
+  
+  <!--工作内容-->
+  <view class="wrap">
+	<view class="h2">工作内容</view>
+	<view class="content f28 grey9 fourClamp">
+		<block  wx:for="{{proDetail.workDetail}}" wx:key="{{index}}">
+			<view >{{item}}</view>
+		</block>
+	</view>
+  </view>
+  
+  
 </view>
 
 
