@@ -13,7 +13,7 @@ Page({
             imgUrl,
         ],
         proDetail:{
-
+            logo:'https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/work/包拯/logo.png?sign=0db95d59c0d54de5f371e76f440c9ec2&t=1552635956',
             companyName:'真有两把刷子-包拯',
             position:'UX&高级视觉设计师',
             companyArr:[

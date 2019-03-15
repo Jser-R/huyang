@@ -3,7 +3,7 @@
 <!--公司内容-->
 <view class="topWrap">
   <view class="top">
-	<image class="logo l" src="https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/programs/location.png?sign=d62c6b7646b3c888b45c3cd6aacbc105&t=1552540406"></image>
+	<image class="logo l" src="{{proDetail.logo}}"></image>
 	<view class="f36 bold title">{{proDetail.companyName}}<span class="f24">（已上线）</span></view>
 	<view class="f26">{{proDetail.position}}</view>
   </view>
