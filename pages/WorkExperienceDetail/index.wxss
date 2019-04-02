@@ -1,4 +1,4 @@
-/* pages/proDetail/index.wxss */
+/* pages/WorkExperienceDetail/index.wxss */
 .bg{
     height: 200rpx;
     background: #000000;
@@ -65,8 +65,7 @@
 .versionsSwiper .programVersion{
     line-height: 56rpx;
     padding: 0 40rpx 0 74rpx;
-    background: url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/icon_mobile.png?sign=c7da599d166870541526bdec0c0826fa&t=1552542418")
- no-repeat 36rpx center;
+    background: url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/icon_mobile.png") no-repeat 36rpx center;
     background-size: 20rpx;
     position: relative;
 }
@@ -84,12 +83,8 @@
     color: #000;
 }
 .versionsSwiper .scrollX .imageItem{
-    /*width: 376rpx!important;*/
-    /*height: 664rpx!important;*/
     display: inline-block;
     padding: 30rpx 15rpx;
-    /*box-shadow:0 4rpx 20rpx 0 rgba(0,0,0,0.1);*/
-
 }
 .versionsSwiper .scrollX .imageItem:first-child{
     padding: 30rpx 15rpx  30rpx 38rpx;
@@ -104,23 +99,76 @@
     box-shadow:0 4rpx 20rpx 0 rgba(0,0,0,0.1);
 }
 
-
-/*工作内容*/
 .wrap{
     padding: 0 40rpx;
 }
-.h2{
+.wrap .h2{
     font-size: 36rpx;
     line-height: 32rpx;
     padding: 60rpx 0 50rpx;
     font-weight: bold;
 }
-.content{
+.wrap .h2 text{
+    font-size: 24rpx;
+    color:#999;
+    font-weight: normal;
+}
+.wrap .content{
     padding-bottom: 60rpx;
+
+}
+/*工作内容*/
+.workContentWrap .more{
+    margin-top: 30rpx;
+    padding-right: 36rpx;
+    line-height: 40rpx;
+    background: url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/arrow_down_black.png") no-repeat right center;
+    background-size: 22rpx;
+
 }
 
 
+/*整体页面展示*/
+.mainImagePathWrap image{
+    width: 670rpx;
+    height: 500rpx;
+}
 
+/*项目详情*/
+.programWrap{
 
+}
 
+.programItem{
 
+}
+
+.programItem .title{
+    padding: 46rpx 0 46rpx 120rpx;
+    background: url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/icon_discovery.png") no-repeat 40rpx 30rpx,
+    url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/arrow_down_grey.png") no-repeat 612rpx center,
+    #F7F8FA ;
+    background-size: 48rpx,19rpx;
+    color:#666666;
+    font-size: 32rpx;
+}
+.programItem .scrollX{
+    margin: 0 -40rpx;
+    padding:30rpx 0;
+    width: 750rpx;
+}
+.programItem .scrollX .imageItem{
+    display: inline-block;
+    padding: 0 15rpx;
+    width: 396rpx;
+    height: 662rpx;
+    background: url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/public/bg_phone.png") no-repeat center center;
+    background-size: 396rpx;
+    /*border-radius: 20rpx;*/
+    /*box-shadow:0 4rpx 20rpx 0 rgba(0,0,0,0.1);*/
+}
+.programItem  .scrollX .imageItem image{
+    width: 352rpx;
+    height: 626rpx;
+
+}

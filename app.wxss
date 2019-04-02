@@ -15,6 +15,7 @@ page{
 .f40{font-size: 40rpx;line-height: 56rpx}
 
 .t_center{text-align: center}
+.t_right{text-align: right}
 
 .bold{font-weight: bold}
 
@@ -46,4 +47,10 @@ page{
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both
 }

@@ -1,5 +1,6 @@
-// pages/proDetail/index.js
-const imgUrl = 'https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/work/包拯/pic_01.png?sign=7458be5b19956313a375e8aab9d8f4b5&t=1552542619'
+// pages/WorkExperienceDetail/index.js
+const IMAGE_INDEX = 'https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/';
+const imgUrl = IMAGE_INDEX+'work/包拯/pic_01.png';
 Page({
 
     /**
@@ -12,8 +13,8 @@ Page({
             imgUrl,
             imgUrl,
         ],
-        proDetail:{
-            logo:'https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/work/包拯/logo.png?sign=0db95d59c0d54de5f371e76f440c9ec2&t=1552635956',
+        WorkExperienceDetail:{
+            logo:IMAGE_INDEX+'work/包拯/logo.png',
             companyName:'真有两把刷子-包拯',
             position:'UX&高级视觉设计师',
             companyArr:[
@@ -45,15 +46,23 @@ Page({
                     ]
                 }
             ],
-            workDetail:[
-                '1.包拯项目后期的品牌修正和调整；' ,
-                '2.包拯小程序2.1.0全部页面设计及2.2.0的迭代；' ,
-                '3.包拯项目活动页及部分平面的设计；',
-                '4.参与前期产品定位及框架搭建，后期产品上线的… 分析；',
-                '5.定期组织设计团队内部的分享评论会，让一些年轻 设计师更好的把握设计技巧及公司的设计定位；',
-                '6.协助CTO进行产品输出，配合技术完成开发；',
-            ],
-        }
+            workDetail:'<div class="">1.包拯项目后期的品牌修正和调整；<br>2.包拯小程序2.1.0全部页面设计及2.2.0的迭代；<br>3.包拯项目活动页及部分平面的设计；<br>' +
+                '4.参与前期产品定位及框架搭建，后期产品上线的分析；<br>5.定期组织设计团队内部的分享评论会，让一些年轻 设计师更好的把握设计技巧及公司的设计定位；<br>' +
+                '6.协助CTO进行产品输出，配合技术完成开发；</div>',
+            hiddenWorkDetail:true,
+            mainImagePath:IMAGE_INDEX+'work/包拯/pic_02.png'
+        },
+        programDetail:[
+            {
+                name:'包拯2.1.0',
+                moduleImages:[
+                    imgUrl,
+                    imgUrl,
+                    imgUrl,
+                    imgUrl,
+                ]
+            }
+        ]
 
     },
 
@@ -81,7 +90,7 @@ Page({
     slideUpVersion(e){
         const item = e.target.dataset.item;
         const index = e.target.dataset.index;
-        const obj = 'proDetail.programArr[' +index+ '].hidden';
+        const obj = 'WorkExperienceDetail.programArr[' +index+ '].hidden';
         if(item.hidden){
             this.setData({
                 [obj]:false
@@ -96,12 +105,26 @@ Page({
         const index = e.target.dataset.index;
         const activeIndex = Math.floor(scrollLeft/180)+1;
         if(activeIndex!==item.activeIndex){
-            const obj = 'proDetail.programArr.versions[' +index+ '].activeIndex';
+            const obj = 'WorkExperienceDetail.programArr[' +index+ '].activeIndex';
             this.setData({
                 [obj]:activeIndex
             })
         }
 
+    },
+    //展示全部工作内容
+    showWorkDetail(){
+        this.setData({
+            ['WorkExperienceDetail.hiddenWorkDetail']:false
+        })
+    },
+    // 查看大图
+    previewImage(e){
+        const images = e.target.dataset.images;
+        console.log(images)
+        wx.previewImage({
+            urls: images
+        })
     },
     /**
      * 用户点击右上角分享

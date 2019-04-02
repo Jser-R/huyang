@@ -54,7 +54,7 @@ Page({
     toDetail(e){
         const item = e.target.dataset.item;
         wx.navigateTo({
-            url: '/pages/proDetail/index',
+            url: '/pages/WorkExperienceDetail/index',
         })
     },
     toWorkDetail(){
