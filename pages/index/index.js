@@ -12,58 +12,61 @@ Page({
       {name:'平面设计'},
     ],
      QAList: [
-         { Q: '1', drop:false, className:'one'},
-         { Q: '2', drop: false, className: 'two'},
-         { Q: '3', drop: false, className: 'three'}
+         { drop: false, className:' one',pic:'QA_1.png'},
+         { drop: false, className: 'two',pic:'QA_2.png'},
+         { drop: false, className: 'three',pic:'QA_3.png'},
+         { drop: false, className: 'four',pic:'QA_4.png'},
+         { drop: false, className: 'five',pic:'QA_5.png'},
         ],
-      proList: [
-        { name: '包拯2.1.0～2.2.0', introduce: 'UI：主要负责包拯小程序的界面设计和迭代，参与初期产品讨论和原型制定…', image: IMAGE_INDEX+'work/包拯/banner.png', time:'2016.11-至今' },
-        { name: '陈真弄潮儿小程序', introduce: 'UX：主要负责B端C端用户小程序、陈真商城及H5的界面 设计/迭代，参与初期产品设定', image: IMAGE_INDEX+'work/包拯/banner.png', time: '2016.11-2019.02' },
-      ]
+    workList: []
   },
 
   onLoad: function () {
-
+    this.getWorkList()
   },
-    tap(e){
+  getWorkList(){
+    app.globalData.db.collection('work').get().then(res => {
+      this.setData({
+        workList: res.data
+      })
+    })
+  },
+  changeQA(e){
         const item = e.target.dataset.item;
         const index = e.target.dataset.index;
         const key = 'QAList[' + index + '].drop';
         let arr = [...this.data.QAList];
-
         this.setData({
             [key]:true
-        })
+        });
 
         setTimeout(()=>{
-            arr.unshift(arr.splice(arr.length - 1, 1)[0]);
-            arr.forEach(arrItem => {
-                arrItem.drop = false
-            })
-            this.setData({
-                QAList: arr
-            })
-        },500)
+          arr.unshift(arr.splice(arr.length - 1, 1)[0]);
+          arr.forEach(arrItem => {
+            arrItem.drop = false
+          });
+          this.setData({
+            QAList:arr
+            // ['QAList[0].drop']:false
+          });
+          console.table(arr)
+          // this.data.QAList[0].drop = false
+            // console.table(arr)
+            // this.setData({
+            //     QAList: arr
+            // })
+        },1000)
     },
     changeNav(e){
       const index = e.target.dataset.index;
-      console.log(index)
       this.setData({
         navIndex: index
       })
     },
     toDetail(e){
-        const item = e.target.dataset.item;
+        const item = e.currentTarget.dataset.item;
         wx.navigateTo({
-            url: '/pages/WorkExperienceDetail/index',
+            url: '/pages/WorkExperienceDetail/index?id='+item._id,
         })
     },
-    toWorkDetail(){
-        wx.showToast({
-            title: '1',
-        })
-        // wx.showToast({
-        //     title:'1111'
-        // })
-    }
 })

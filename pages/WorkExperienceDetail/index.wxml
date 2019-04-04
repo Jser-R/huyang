@@ -69,7 +69,7 @@
   <!--整体页面展示-->
   <view class="mainImagePathWrap wrap">
 	<view class="h2">整体页面展示<text>（点击查看大图）</text></view>
-	<view class="content">
+	<view class="content" bindtap="toProgramDetail">
 	  <image src="{{WorkExperienceDetail.mainImagePath}}"  lazy-load></image>
 	
 	</view>

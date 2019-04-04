@@ -1,0 +1,6 @@
+/* pages/programDetail/index.wxss */
+
+.programDetail image{
+  width: 100%;
+  vertical-align: middle;
+}

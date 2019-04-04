@@ -21,28 +21,36 @@
       <view class='f22'>Q&A</view>
     </view>
 
-    <view class='f24 g9b right'>已解答10个问题</view>
+    <view class='f24 g9b right'>已解答{{QAList.length}}个问题</view>
   </view>
 
   <view class="content">
     <view class="QAList f40">
-      <view wx:for="{{QAList}}" class="{{item.drop?'dropAnimation':item.className}}" catchtap='tap' data-index='{{index}}' data-item='{{item}}' wx:key="index">{{item.Q}}</view>
+      <block wx:for="{{QAList}}"  wx:key="index" >
+        <image class="{{item.drop?'dropAnimation':item.className}}"
+               catchtap='changeQA'
+               data-index='{{index}}'
+               data-item='{{item}}'
+               src="{{'/images/homePage/'+item.pic}}"></image>
+      </block>
     </view>
   </view>
 
   <view class="nav f28 grey9">
-    <view wx:for="{{nav}}"
-          wx:key="{{index}}"
-          class="{{navIndex === index?'active':''}}"
-          data-index='{{index}}'
-          bindtap='changeNav'>{{item.name}}</view>
+    <block wx:for="{{nav}}"
+           wx:key="{{index}}">
+      <view class="{{navIndex === index?'active':''}}"
+            data-index='{{index}}'
+            bindtap='changeNav'>{{item.name}}</view>
+    </block>
+    
   </view>
 
 </view>
 
 
 <view class="navContent">
-  <block wx:for="{{proList}}" wx:key="{{index}}">
+  <block wx:for="{{workList}}" wx:key="{{index}}">
     <view bindtap='toDetail' data-item='{{item}}'>
       <image src='{{item.image}}' lazy-load></image>
       <view class="f34 bold title">{{item.name}}</view>

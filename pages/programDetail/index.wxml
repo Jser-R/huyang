@@ -1,0 +1,10 @@
+<!--pages/programDetail/index.wxml-->
+
+<view class="programDetail">
+  <block wx:for="{{imagesArr}}" wx:key="{{index}}">
+	<image src="{{item}}" bindtap="previewImage"
+		   data-item="{{item}}"
+		   mode="widthFix" lazy-load ></image>
+  </block>
+
+</view>

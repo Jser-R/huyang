@@ -1,7 +1,8 @@
 /**index.wxss**/
 .topWrap{
   height: 442rpx;
-  background: #873647;
+  background: url('https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/homePage/bg.png') no-repeat left center;
+  background-size:  contain;
   position:relitive;
 }
 
@@ -25,7 +26,7 @@
   height: 176rpx;
   border-radius: 50%;
   border:10rpx #000 solid;
-  background: url('https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/homePage/avatar.png?sign=f12696ccdec73aa850693058cbf83458&t=1552487024') no-repeat left center;
+  background: url('https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/homePage/avatar.png') no-repeat left center;
   background-size:  176rpx;
 }
 
@@ -39,7 +40,7 @@
 }
 
 .topWrap .inner .content view{
-  margin-bottom: 18rpx
+  margin-bottom: 14rpx
 }
 
 /**/
@@ -79,7 +80,8 @@
   margin: 28rpx auto 0;
   position: relative
 }
-.QAList view{
+
+.QAList image{
   background: #fff;
   width: 670rpx;
   height: 210rpx;
@@ -91,17 +93,21 @@
 }
 
 .QAList .one{
-  /* background: blue; */
-  transform: rotate(-4deg)
+  transform: rotate(-4deg);
 }
 
 .QAList .two{
-  /* background: red; */
-  transform: rotate(4deg)
+  transform: rotate(4deg);
 }
 
 .QAList .three{
-  transform: rotate(0)
+  transform: rotate(0deg)
+}
+.QAList .four{
+  transform: rotate(2deg)
+}
+.QAList .five{
+  transform: rotate(-2deg)
 }
 
 
@@ -145,7 +151,8 @@
 
   height:460rpx;
   border-radius:20rpx;
-  margin-bottom:30rpx
+  margin-bottom:30rpx;
+  box-shadow: 0 0 20rpx rgba(0,0,0,.3) ;
 }
 
 .navContent .title{
