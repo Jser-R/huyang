@@ -52,7 +52,7 @@
 <view class="navContent">
   <block wx:for="{{workList}}" wx:key="{{index}}">
     <view bindtap='toDetail' data-item='{{item}}'>
-      <image src='{{item.image}}' lazy-load></image>
+      <image src='{{item.image}}' mode="widthFix" lazy-load ></image>
       <view class="f34 bold title">{{item.name}}</view>
       <view class='f24 grey9 introduce'>{{item.introduce}}</view>
       <view class='f24 time'>{{item.time}}</view>

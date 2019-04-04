@@ -18,6 +18,7 @@
 .menu_btn{
     width: 132rpx;
     height: 132rpx;
+    vertical-align: middle;
     /*transform: rotate(90deg);*/
 }
 

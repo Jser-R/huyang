@@ -148,11 +148,10 @@
   margin-bottom: 140rpx
 }
 .navContent image{
-
-  height:460rpx;
+  width: 100%;
   border-radius:20rpx;
   margin-bottom:30rpx;
-  box-shadow: 0 0 20rpx rgba(0,0,0,.3) ;
+  box-shadow: 0 0 20rpx rgba(0,0,0,.05) ;
 }
 
 .navContent .title{
