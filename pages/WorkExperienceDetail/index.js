@@ -28,39 +28,42 @@ Page({
                     version:'2.2.0',
                     activeIndex:1,
                     images:[
-                        imgUrl,
-                        imgUrl,
-                        imgUrl,
-                        imgUrl,
+                        IMAGE_INDEX+'work/包拯/front_img2.2.1.png',
+                        IMAGE_INDEX+'work/包拯/front_img2.2.2.png',
+                        IMAGE_INDEX+'work/包拯/front_img2.2.3.png',
                     ]
                 },
-                {
-                    hidden:true,
-                    version:'2.1.0',
-                    activeIndex:1,
-                    images:[
-                        imgUrl,
-                        imgUrl,
-                        imgUrl,
-                        imgUrl,
-                    ]
-                }
             ],
             workDetail:'<div class="">1.包拯项目后期的品牌修正和调整；<br>2.包拯小程序2.1.0全部页面设计及2.2.0的迭代；<br>3.包拯项目活动页及部分平面的设计；<br>' +
                 '4.参与前期产品定位及框架搭建，后期产品上线的分析；<br>5.定期组织设计团队内部的分享评论会，让一些年轻 设计师更好的把握设计技巧及公司的设计定位；<br>' +
                 '6.协助CTO进行产品输出，配合技术完成开发；</div>',
             hiddenWorkDetail:true,
-            mainImagePath:IMAGE_INDEX+'work/包拯/pic_02.png'
+            mainImagePath:IMAGE_INDEX+'work/包拯/banner.png'
         },
         programDetail:[
             {
-                name:'包拯2.1.0',
+                version:'2.2.0',
+                name:'包拯2.2.0',
+                hidden:false,
                 moduleImages:[
-                    imgUrl,
-                    imgUrl,
-                    imgUrl,
-                    imgUrl,
-                ]
+                    {title:'首页',image:IMAGE_INDEX+'work/包拯/model_img2.2.1.png'},
+                    {title:'案例',image:IMAGE_INDEX+'work/包拯/model_img2.2.2.png'},
+                    {title:'订单',image:IMAGE_INDEX+'work/包拯/model_img2.2.3.png'},
+                    {title:'我的',image:IMAGE_INDEX+'work/包拯/model_img2.2.4.png'},
+                ],
+                sketchImage:IMAGE_INDEX+'work/包拯/sketch2.2.1.png'
+            },
+            {
+                version:'2.1.0',
+                name:'包拯2.1.0',
+                hidden:true,
+                moduleImages:[
+                    {title:'首页',image:IMAGE_INDEX+'work/包拯/model_img2.1.1.png'},
+                    {title:'案例',image:IMAGE_INDEX+'work/包拯/model_img2.1.2.png'},
+                    {title:'订单',image:IMAGE_INDEX+'work/包拯/model_img2.1.3.png'},
+                    {title:'我的',image:IMAGE_INDEX+'work/包拯/model_img2.1.4.png'},
+                ],
+                sketchImage:IMAGE_INDEX+'work/包拯/sketch2.1.1.png'
             }
         ]
 
@@ -120,12 +123,25 @@ Page({
     },
     // 查看大图
     previewImage(e){
-        const images = e.target.dataset.images;
-        console.log(images)
+        const images = e.currentTarget.dataset.images;
+        const imageIndex = e.currentTarget.dataset.imageIndex;
+        const urls =  images.map(item => {return item.image});
+        console.log(e.currentTarget.dataset)
         wx.previewImage({
-            urls: images
+            current:urls[imageIndex],
+            urls: urls
         })
     },
+    //展示项目详情
+    showProgram(e){
+        const item = e.target.dataset.item;
+        const index = e.target.dataset.index;
+        const obj = 'programDetail[' +index+ '].hidden';
+        this.setData({
+            [obj]:!item.hidden
+        })
+    },
+
     /**
      * 用户点击右上角分享
      */

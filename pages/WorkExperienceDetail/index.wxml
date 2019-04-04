@@ -70,7 +70,7 @@
   <view class="mainImagePathWrap wrap">
 	<view class="h2">整体页面展示<text>（点击查看大图）</text></view>
 	<view class="content">
-	  <image src="{{WorkExperienceDetail.mainImagePath}}" bindtap="previewImage" data-images="{{[WorkExperienceDetail.mainImagePath]}}"></image>
+	  <image src="{{WorkExperienceDetail.mainImagePath}}"  lazy-load></image>
 	
 	</view>
   </view>
@@ -81,24 +81,39 @@
 	<view class="h2">项目详情</view>
 	<block wx:for="{{programDetail}}" wx:key="{{index}}">
 	  <view class="programItem">
-		<view class="title">
-		  {{item.name}}
+		<view class="title"
+			  bindtap="showProgram"
+			  data-item="{{item}}"
+			  data-index="{{index}}">{{item.name}}</view>
+		<view class="contentWrap"
+			  hidden="{{item.hidden}}">
+		  <view class="content">
+			<view class="h2">功能模块页面展示<text >（点击查看大图）</text></view>
+			<scroll-view class='scrollX' scroll-x>
+			  <block  wx:for="{{item.moduleImages}}"
+					  wx:for-item="imageItem"
+					  wx:for-index="imageIndex"
+					  wx:key="{{imageIndex}}">
+				<view class="imageItem">
+				  <view class="f24 g9b imageTitle">{{imageItem.title}}</view>
+				  <view class="imgWrap"
+						bindtap="previewImage"
+						data-image-index="{{imageIndex}}"
+						data-images="{{item.moduleImages}}">
+					<image src="{{imageItem.image}}" lazy-load></image>
+				  </view>
+				</view>
+			  </block>
+			</scroll-view>
+		  </view>
+		  <view class="content">
+			<view class="h2">{{item.version}}sketch页面截图<text >（小程序）</text></view>
+			<view>
+			  <image class="sketchImage" src="{{item.sketchImage}}" lazy-load></image>
+			</view>
+		  </view>
 		</view>
-		<view class="content">
-		  <view class="h2">功能模块页面展示<text >（点击查看大图）</text></view>
-		  <scroll-view class='scrollX' scroll-x
-					   data-item="{{item}}"
-					   data-index="{{index}}">
-			<block  wx:for="{{item.moduleImages}}"
-					wx:for-item="image"
-					wx:for-index="imageIndex"
-					wx:key="{{imageIndex}}">
-			  <view class="imageItem">
-				<!--<image src="{{image}}" lazy-load></image>-->
-			  </view>
-			</block>
-		  </scroll-view>
-		</view>
+		
 	  </view>
 	</block>
   </view>
