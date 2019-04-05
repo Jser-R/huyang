@@ -1,4 +1,4 @@
-// pages/WorkExperienceDetail/index.js
+// pages/workExperienceDetail/index.js
 const app = getApp()
 const IMAGE_INDEX = 'https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/';
 const imgUrl = IMAGE_INDEX+'work/包拯/pic_01.png';
@@ -9,9 +9,9 @@ Page({
      */
     data: {
         workId:'',
-        programId:'',
         WorkExperienceDetail:{},
-        programDetail:[]
+        programDetail:[],
+        workProgramImages:[]
     },
 
     /**
@@ -19,24 +19,43 @@ Page({
      */
     onLoad: function (options) {
         console.log(options);
-        this.getWorkDetail(options.id)
+        this.setData({
+            workId:options.workId,
+        });
+        this.getWorkDetail(options.workId);
+        this.getProgramList(options.workId)
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+        wx.setNavigationBarColor({
+            frontColor: '#ffffff',
+            backgroundColor: '#000',
+            animation: {
+                duration: 400,
+                timingFunc: 'easeIn'
+            }
+        })
     },
     //获取工作经验详情
-    getWorkDetail(id){
-        app.globalData.db.collection('work').doc(id).get().then(res => {
-            console.log(res)
+    getWorkDetail(workId){
+        app.globalData.db.collection('work').where({
+            workId:workId
+        }).get().then(res => {
+            console.log(res);
+            const data = res.data[0];
             this.setData({
-                workId:res.data.workId,
-                programId:res.data.programId,
-                WorkExperienceDetail:res.data.WorkExperienceDetail
+                WorkExperienceDetail:data.WorkExperienceDetail
             });
-            this.getProgramList(res.data.workId)
+            if(data.WorkExperienceDetail.programArr){
+                // 需要展示项目内容
+
+            }else {
+                // 只展示项目图片
+                this.getWorkProgramDetail(workId)
+            }
+
         })
     },
     //获取项目列表
@@ -47,10 +66,19 @@ Page({
             this.setData({
                 programDetail:res.data,
             })
-
         })
     },
-
+    // 获取项目图片
+    getWorkProgramDetail(workId){
+        app.globalData.db.collection('workProgramDetail').where({
+            workId:workId
+        }).get().then(res => {
+            console.log(res)
+            this.setData({
+                workProgramImages:res.data[0].images
+            })
+        })
+    },
     // 展开对应版本
     slideUpVersion(e){
         const item = e.target.dataset.item;
@@ -98,14 +126,23 @@ Page({
     showProgram(e){
         const item = e.target.dataset.item;
         const index = e.target.dataset.index;
-        const obj = 'programDetail[' +index+ '].hidden';
+        const obj = 'workProgramDetail[' +index+ '].hidden';
         this.setData({
             [obj]:!item.hidden
         })
     },
     toProgramDetail(){
         wx.navigateTo({
-            url: '/pages/programDetail/index?id='+this.data.programId,
+            url: '/pages/workProgramDetail/index?id='+this.data.workId,
+        })
+    },
+    // 查看大图
+    previewProgramImage(e){
+        const urls = this.data.workProgramImages;
+        const current = e.currentTarget.dataset.item;
+        wx.previewImage({
+            current:current,
+            urls: urls
         })
     },
     /**

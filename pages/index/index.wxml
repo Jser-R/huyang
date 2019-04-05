@@ -49,15 +49,36 @@
 </view>
 
 
-<view class="navContent">
-  <block wx:for="{{workList}}" wx:key="{{index}}">
+<view class="navContent" >
+<!--  工作经历-->
+  <block wx:for="{{workList}}" wx:if="{{navIndex === 0}}" wx:key="{{index}}">
+    <view bindtap='toWorkExperienceDetail' data-item='{{item}}'>
+      <image src='{{item.image}}' mode="widthFix" lazy-load ></image>
+      <view class="f34 bold title">{{item.name}}</view>
+      <view class='f24 grey9 introduce'>{{item.introduce}}</view>
+      <view class='f24 time'>{{item.time}}</view>
+    </view>
+  </block>
+
+<!-- 项目经历 -->
+  <block wx:for="{{projectList}}" wx:if="{{navIndex === 1}}" wx:key="{{index}}">
+    <view bindtap='toProjectDetail' data-item='{{item}}'>
+      <image src='{{item.image}}' mode="widthFix" lazy-load ></image>
+      <view class="f34 bold title">{{item.name}}</view>
+      <view class='f24 grey9 introduce'>{{item.introduce}}</view>
+      <view class='f24 time'>{{item.time}}</view>
+    </view>
+  </block>
+
+
+<!--  平面设计 -->
+  <block wx:for="{{workList}}" wx:if="{{navIndex === 2}}" wx:key="{{index}}">
     <view bindtap='toDetail' data-item='{{item}}'>
       <image src='{{item.image}}' mode="widthFix" lazy-load ></image>
       <view class="f34 bold title">{{item.name}}</view>
       <view class='f24 grey9 introduce'>{{item.introduce}}</view>
       <view class='f24 time'>{{item.time}}</view>
     </view>
-
   </block>
 </view>
 

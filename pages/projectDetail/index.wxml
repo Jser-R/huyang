@@ -1,6 +1,6 @@
-<!--pages/programDetail/index.wxml-->
+<!--pages/workProgramDetail/index.wxml-->
 
-<view class="programDetail">
+<view class="projectDetail">
   <block wx:for="{{imagesArr}}" wx:key="{{index}}">
 	<image src="{{item}}" bindtap="previewImage"
 		   data-item="{{item}}"

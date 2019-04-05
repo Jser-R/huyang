@@ -1,4 +1,4 @@
-// pages/programDetail/index.js
+// pages/workProgramDetail/index.js
 const app =getApp()
 Page({
 
@@ -16,9 +16,9 @@ Page({
         this.getProgramDetail(options.id)
     },
     //获取项目列表
-    getProgramDetail(programId){
-        app.globalData.db.collection('program').where({
-            programId:programId
+    getProgramDetail(workId){
+        app.globalData.db.collection('workProgramDetail').where({
+            workId:workId
         }).get().then(res => {
             console.log(res)
             this.setData({

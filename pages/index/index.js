@@ -18,16 +18,28 @@ Page({
          { drop: false, className: 'four',pic:'QA_4.png'},
          { drop: false, className: 'five',pic:'QA_5.png'},
         ],
-    workList: []
+    workList: [],
+    projectList:[]
   },
 
   onLoad: function () {
-    this.getWorkList()
+    this.getWorkList();
+    this.getProjectList()
   },
+  // 获取工作经历列表
   getWorkList(){
     app.globalData.db.collection('work').get().then(res => {
       this.setData({
         workList: res.data
+      })
+    })
+  },
+  // 获取项目经历列表
+  getProjectList(){
+    app.globalData.db.collection('project').get().then(res => {
+      console.log(res);
+      this.setData({
+        projectList: res.data
       })
     })
   },
@@ -57,16 +69,22 @@ Page({
             // })
         },1000)
     },
-    changeNav(e){
-      const index = e.target.dataset.index;
-      this.setData({
-        navIndex: index
+  changeNav(e){
+    const index = e.target.dataset.index;
+    this.setData({
+      navIndex: index
+    })
+  },
+  toWorkExperienceDetail(e){
+      const item = e.currentTarget.dataset.item;
+      wx.navigateTo({
+          url: '/pages/workExperienceDetail/index?workId='+item.workId,
       })
-    },
-    toDetail(e){
-        const item = e.currentTarget.dataset.item;
-        wx.navigateTo({
-            url: '/pages/WorkExperienceDetail/index?id='+item._id,
-        })
-    },
+  },
+  toProjectDetail(e){
+    const item = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '/pages/projectDetail/index?id='+item._id,
+    })
+  }
 })

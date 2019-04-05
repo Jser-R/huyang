@@ -1,8 +1,9 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/WorkExperienceDetail/index",
-        "pages/programDetail/index"
+        "pages/workExperienceDetail/index",
+        "pages/workProgramDetail/index",
+        "pages/projectDetail/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
