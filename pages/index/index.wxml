@@ -72,8 +72,8 @@
 
 
 <!--  平面设计 -->
-  <block wx:for="{{workList}}" wx:if="{{navIndex === 2}}" wx:key="{{index}}">
-    <view bindtap='toDetail' data-item='{{item}}'>
+  <block wx:for="{{designList}}" wx:if="{{navIndex === 2}}" wx:key="{{index}}">
+    <view bindtap='toDesignDetail' data-item='{{item}}'>
       <image src='{{item.image}}' mode="widthFix" lazy-load ></image>
       <view class="f34 bold title">{{item.name}}</view>
       <view class='f24 grey9 introduce'>{{item.introduce}}</view>

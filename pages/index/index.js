@@ -19,12 +19,14 @@ Page({
          { drop: false, className: 'five',pic:'QA_5.png'},
         ],
     workList: [],
-    projectList:[]
+    projectList:[],
+    designList:[]
   },
 
   onLoad: function () {
     this.getWorkList();
-    this.getProjectList()
+    this.getProjectList();
+    this.getDesignList()
   },
   // 获取工作经历列表
   getWorkList(){
@@ -37,9 +39,18 @@ Page({
   // 获取项目经历列表
   getProjectList(){
     app.globalData.db.collection('project').get().then(res => {
-      console.log(res);
+      // console.log(res);
       this.setData({
         projectList: res.data
+      })
+    })
+  },
+  // 获取平面设计列表
+  getDesignList(){
+    app.globalData.db.collection('graphicDesign').get().then(res => {
+      // console.log(res);
+      this.setData({
+        designList: res.data
       })
     })
   },
@@ -85,6 +96,12 @@ Page({
     const item = e.currentTarget.dataset.item;
     wx.navigateTo({
       url: '/pages/projectDetail/index?id='+item._id,
+    })
+  },
+  toDesignDetail(e){
+    const item = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '/pages/designDetail/index?id='+item._id,
     })
   }
 })
