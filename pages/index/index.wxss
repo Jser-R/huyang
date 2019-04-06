@@ -81,8 +81,9 @@
   position: relative
 }
 
-.QAList image{
-  background: #fff;
+.QAList view{
+  background:no-repeat left center;
+  background-size:cover;
   width: 670rpx;
   height: 210rpx;
   position: absolute;
@@ -92,21 +93,27 @@
   box-shadow:0 0 20rpx 0 rgba(191,191,191,0.5);
 }
 
+
 .QAList .one{
+  background-image:  url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/QA/01.jpg") ;
   transform: rotate(-4deg);
 }
 
 .QAList .two{
+  background-image:  url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/QA/02.jpg") ;
   transform: rotate(4deg);
 }
 
 .QAList .three{
+  background-image:  url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/QA/03.jpg") ;
   transform: rotate(0deg)
 }
 .QAList .four{
+  background-image:  url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/QA/04.jpg") ;
   transform: rotate(2deg)
 }
 .QAList .five{
+  background-image:  url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/QA/05.jpg") ;
   transform: rotate(-2deg)
 }
 
@@ -157,6 +164,8 @@
 .navContent .title{
   margin-bottom: 18rpx
 }
+
+
 .navContent .introduce{
   margin-bottom: 22rpx
 }

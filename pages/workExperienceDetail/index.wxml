@@ -4,7 +4,7 @@
 	<view class="topWrap">
 		<view class="top">
 			<image class="logo l" src="{{WorkExperienceDetail.logo}}"></image>
-			<view class="f36 bold title">{{WorkExperienceDetail.companyName}}<span class="f24">（已上线）</span></view>
+			<view class="f36 bold title">{{WorkExperienceDetail.companyName}}<text wx:if="{{isOnline}}" class="f24">（已上线）</text></view>
 			<view class="f26">{{WorkExperienceDetail.position}}</view>
 		</view>
 		<view class="bot">
@@ -132,7 +132,13 @@
 	</view>
 </block>
 
+<otherProject title="其他工作经历"
+			  list="{{workList}}"
+			  itemId="{{id}}"
+			  bind:toNewItem="toNewItem"></otherProject>
 
-<!--<menu></menu>-->
+
+<noData></noData>
+<menu></menu>
 
 

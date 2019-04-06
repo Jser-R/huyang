@@ -8,3 +8,11 @@
   </block>
 
 </view>
+
+<otherProject title="其他项目经历"
+			  list="{{projectList}}"
+			  itemId="{{id}}"
+			  bind:toNewItem="toNewItem"></otherProject>
+
+<noData></noData>
+<menu></menu>

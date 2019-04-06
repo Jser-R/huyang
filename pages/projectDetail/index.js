@@ -6,13 +6,26 @@ Page({
      * 页面的初始数据
      */
     data: {
-        imagesArr:[]
+      id:"",
+        imagesArr:[],
+      projectList:[]
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
+    onReady: function () {
+      app.getProjectList().then(projectList =>{
+        this.setData({
+          projectList: projectList
+        })
+      });
+
+    },
     onLoad: function (options) {
+      this.setData({
+        id:options.id
+      });
         this.getProgramDetail(options.id)
     },
     //获取项目列表
@@ -32,6 +45,11 @@ Page({
             urls: urls
         })
     },
+  toNewItem(e){
+    wx.redirectTo({
+      url: '/pages/projectDetail/index?id='+e.detail._id,
+    })
+  },
     /**
      * 用户点击右上角分享
      */

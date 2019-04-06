@@ -6,13 +6,26 @@ Page({
      * 页面的初始数据
      */
     data: {
-        imagesArr:[]
+        id:'',
+        imagesArr:[],
+        designList:[]
     },
 
+    onReady: function () {
+        app.getDesignList().then(designList =>{
+            this.setData({
+                designList: designList
+            })
+        });
+
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        this.setData({
+            id:options.id
+        });
         this.getProgramDetail(options.id)
     },
     //获取项目列表
@@ -30,6 +43,11 @@ Page({
         wx.previewImage({
             current:current,
             urls: urls
+        })
+    },
+    toNewItem(e){
+        wx.redirectTo({
+            url: '/pages/designDetail/index?id='+e.detail._id,
         })
     },
     /**

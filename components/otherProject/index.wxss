@@ -1,0 +1,45 @@
+/* components/otherProject/index.wxss */
+@import "/app.wxss";
+.otherProject{
+  margin-bottom: 124rpx;
+}
+
+.otherProject .title{
+  padding: 0 40rpx;
+  margin-bottom: 50rpx;
+}
+
+.scrollItem{
+  margin-right: 30rpx;
+  width: 478rpx;
+  display: inline-block;
+
+}
+.scrollItem:first-child{
+  margin-left: 40rpx;
+}
+.scrollItem image{
+  width: 478rpx;
+  height: 350rpx;
+  margin-bottom: 36rpx;
+  vertical-align: middle;
+  box-shadow: 0 0 20rpx rgba(0,0,0,.05) ;
+}
+
+.scrollItem view{
+  color: #666;
+}
+
+.nextBtn{
+  padding: 24rpx 84rpx 28rpx 42rpx;
+  /*height:88rpx;*/
+  background:#000 url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/next.png") no-repeat 122rpx 30rpx;
+  background-size: 40rpx;
+  color: #fff;
+  box-shadow:0 2rpx 20rpx 0px rgba(0,0,0,0.1);
+  border-radius:46rpx;
+  position: fixed;
+  right: 182rpx;
+  bottom:102rpx;
+}
+

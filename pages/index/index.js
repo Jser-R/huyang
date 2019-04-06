@@ -24,61 +24,40 @@ Page({
   },
 
   onLoad: function () {
-    this.getWorkList();
-    this.getProjectList();
-    this.getDesignList()
-  },
-  // 获取工作经历列表
-  getWorkList(){
-    app.globalData.db.collection('work').get().then(res => {
-      this.setData({
-        workList: res.data
-      })
-    })
-  },
-  // 获取项目经历列表
-  getProjectList(){
-    app.globalData.db.collection('project').get().then(res => {
-      // console.log(res);
-      this.setData({
-        projectList: res.data
-      })
-    })
-  },
-  // 获取平面设计列表
-  getDesignList(){
-    app.globalData.db.collection('graphicDesign').get().then(res => {
-      // console.log(res);
-      this.setData({
-        designList: res.data
-      })
-    })
-  },
-  changeQA(e){
-        const item = e.target.dataset.item;
-        const index = e.target.dataset.index;
-        const key = 'QAList[' + index + '].drop';
-        let arr = [...this.data.QAList];
-        this.setData({
-            [key]:true
-        });
-
-        setTimeout(()=>{
-          arr.unshift(arr.splice(arr.length - 1, 1)[0]);
-          arr.forEach(arrItem => {
-            arrItem.drop = false
-          });
+    app.getWorkList().then(workList =>{
           this.setData({
-            QAList:arr
-            // ['QAList[0].drop']:false
-          });
-          console.table(arr)
-          // this.data.QAList[0].drop = false
-            // console.table(arr)
-            // this.setData({
-            //     QAList: arr
-            // })
-        },1000)
+            workList: workList
+          })
+    });
+    app.getProjectList().then(projectList =>{
+      this.setData({
+        projectList: projectList
+      })
+    });
+    app.getDesignList().then(designList =>{
+      this.setData({
+        designList: designList
+      })
+    });
+  },
+
+  changeQA(e){
+    const index = e.currentTarget.dataset.index;
+    const key = 'QAList[' + index + '].drop';
+    let arr = [...this.data.QAList];
+    this.setData({
+        [key]:true
+    });
+
+    setTimeout(()=>{
+      arr.unshift(arr.splice(arr.length - 1, 1)[0]);
+      arr.forEach(arrItem => {
+        arrItem.drop = false
+      });
+      this.setData({
+        QAList:arr
+      });
+    },500)
     },
   changeNav(e){
     const index = e.target.dataset.index;

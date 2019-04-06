@@ -1,0 +1,18 @@
+<!--components/otherProject/index.wxml-->
+<view class="otherProject">
+  <view class="title f36 bold">{{title}}</view>
+  <scroll-view class='scrollX' scroll-x>
+    <block  wx:for="{{list}}" wx:key="{{index}}">
+      <view class="scrollItem"
+            wx:if="{{item._id !== itemId}}"
+            data-item="{{item}}"
+            bindtap="toNewItem">
+        <image src="{{item.image}}" lazy-load></image>
+        <view class="f28 bold">{{item.name}}<text wx:if="{{item.isOnline}}">已上线</text></view>
+      </view>
+    </block>
+  </scroll-view>
+
+</view>
+
+<view class="nextBtn f26" bindtap="toNextItem">NEXT</view>

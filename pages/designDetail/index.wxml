@@ -8,3 +8,11 @@
   </block>
 
 </view>
+
+<otherProject title="其他平面设计"
+			  list="{{designList}}"
+			  itemId="{{id}}"
+			  bind:toNewItem="toNewItem"></otherProject>
+
+<noData></noData>
+<menu></menu>

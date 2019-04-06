@@ -8,45 +8,49 @@ Page({
      * 页面的初始数据
      */
     data: {
+      id:'',
         workId:'',
+        isOnline:false,
         WorkExperienceDetail:{},
         programDetail:[],
-        workProgramImages:[]
+        workProgramImages:[],
+      workList:[]
     },
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+      app.getWorkList().then(workList =>{
+        this.setData({
+          workList: workList
+        })
+      });
 
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        console.log(options);
+        // console.log(options);
         this.setData({
             workId:options.workId,
         });
         this.getWorkDetail(options.workId);
         this.getProgramList(options.workId)
     },
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-        wx.setNavigationBarColor({
-            frontColor: '#ffffff',
-            backgroundColor: '#000',
-            animation: {
-                duration: 400,
-                timingFunc: 'easeIn'
-            }
-        })
-    },
+
     //获取工作经验详情
     getWorkDetail(workId){
         app.globalData.db.collection('work').where({
             workId:workId
         }).get().then(res => {
-            console.log(res);
+            // console.log(res);
             const data = res.data[0];
+            console.log(data)
             this.setData({
-                WorkExperienceDetail:data.WorkExperienceDetail
+              id:data._id,
+                WorkExperienceDetail:data.WorkExperienceDetail,
+                isOnline:data.isOnline
             });
             if(data.WorkExperienceDetail.programArr){
                 // 需要展示项目内容
@@ -124,9 +128,10 @@ Page({
     },
     //展示项目详情
     showProgram(e){
+
         const item = e.target.dataset.item;
         const index = e.target.dataset.index;
-        const obj = 'workProgramDetail[' +index+ '].hidden';
+        const obj = 'programDetail[' +index+ '].hidden';
         this.setData({
             [obj]:!item.hidden
         })
@@ -144,6 +149,11 @@ Page({
             current:current,
             urls: urls
         })
+    },
+    toNewItem(e){
+      wx.redirectTo({
+        url: '/pages/workExperienceDetail/index?workId='+e.detail.workId,
+      })
     },
     /**
      * 用户点击右上角分享

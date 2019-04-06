@@ -1,5 +1,9 @@
 {
+
+  "navigationBarTitleText": "工作经历",
   "usingComponents": {
-    "menu":"/components/menu/index"
+    "menu":"/components/menu/index",
+    "noData":"/components/noData/index",
+    "otherProject":"/components/otherProject/index"
   }
 }

@@ -1,5 +1,8 @@
 /* pages/workProgramDetail/index.wxss */
-
+.designDetail{
+  min-height: 800rpx;
+  margin-bottom: 100rpx;
+}
 .designDetail image{
   width: 100%;
   vertical-align: middle;
