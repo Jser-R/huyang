@@ -2,7 +2,7 @@
 .topWrap{
   height: 442rpx;
   background: url('https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/homePage/bg.png') no-repeat left center;
-  background-size:  contain;
+  background-size:  100%;
   position:relitive;
 }
 

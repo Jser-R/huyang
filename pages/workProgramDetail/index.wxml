@@ -2,9 +2,9 @@
 
 <view class="workProgramDetail">
   <block wx:for="{{imagesArr}}" wx:key="{{index}}">
-	<image src="{{item}}" bindtap="previewImage"
-		   data-item="{{item}}"
-		   mode="widthFix" lazy-load ></image>
+    <image src="{{item}}" bindtap="previewImage"
+           data-item="{{item}}"
+           mode="widthFix" lazy-load></image>
   </block>
 
 </view>

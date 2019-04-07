@@ -2,17 +2,17 @@
 
 <view class="projectDetail">
   <block wx:for="{{imagesArr}}" wx:key="{{index}}">
-	<image src="{{item}}" bindtap="previewImage"
-		   data-item="{{item}}"
-		   mode="widthFix" lazy-load ></image>
+    <image src="{{item}}" bindtap="previewImage"
+           data-item="{{item}}"
+           mode="widthFix" lazy-load></image>
   </block>
 
 </view>
 
 <otherProject title="其他项目经历"
-			  list="{{projectList}}"
-			  itemId="{{id}}"
-			  bind:toNewItem="toNewItem"></otherProject>
+              list="{{projectList}}"
+              itemId="{{id}}"
+              bind:toNewItem="toNewItem"></otherProject>
 
 <noData></noData>
 <menu></menu>

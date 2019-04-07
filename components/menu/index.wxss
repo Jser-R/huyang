@@ -1,4 +1,5 @@
 /* component/menu/index.wxss */
+@import "/app.wxss";
 .mask{
     position: fixed;
     left: 0;
@@ -12,10 +13,13 @@
 
 .menu{
     position: fixed;
-    bottom:80rpx;
-    right: 20rpx;
+    bottom:200rpx;
+    right: 12rpx;
 }
 .menu_btn{
+    position: fixed;
+    bottom:80rpx;
+    right: 20rpx;
     width: 132rpx;
     height: 132rpx;
     vertical-align: middle;
@@ -31,7 +35,10 @@
   display: none;
   /* opacity: 0 */
 }
-
+.menu_li text{margin-right: 18rpx}
+.menu_li text,.menu_li image{
+    vertical-align: middle;
+}
 .showMask{animation: showMask .3s forwards;display: block }
 .hideMask{animation: hideMask .3s forwards;}
 

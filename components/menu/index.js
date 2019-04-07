@@ -13,10 +13,10 @@ Component({
     data: {
         animationFlag:false,
         menuList:[
-            { icon:'menu_01.png'},
-            { icon: 'menu_02.png' },
-            { icon: 'menu_03.png' },
-            { icon: 'menu_04.png' },
+            {name:'工作经历', icon:'menu_01.png' },
+            {name:'项目经历', icon: 'menu_02.png' },
+            {name:'平面设计', icon: 'menu_03.png' },
+            {name:'个人简历', icon: 'menu_04.png' },
         ]
     },
 

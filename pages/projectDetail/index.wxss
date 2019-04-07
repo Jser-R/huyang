@@ -1,6 +1,6 @@
 /* pages/workProgramDetail/index.wxss */
 .projectDetail{
-  min-height: 800rpx;
+  min-height: 1000rpx;
   margin-bottom: 100rpx;
 }
 .projectDetail image{

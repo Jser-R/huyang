@@ -1,20 +1,44 @@
 //app.js
+// import requestDB from '/utils/requestDB'
 App({
   onLaunch: function () {
     wx.cloud.init({
         traceUser:true
-    })
-    this.globalData.db = wx.cloud.database()
+    });
   },
-  // 获取工作经历列表
+  requestDB(params){
+    const db = wx.cloud.database();
+    return new Promise(resolve => {
+      wx.showLoading();
+      switch (params.type) {
+        case 'doc':
+          db.collection(params.collectionName).doc(params.id).get()
+            .then(res => {
+              wx.hideLoading();
+              resolve(res.data)
+            });
+          break;
+        default:
+          db.collection(params.collectionName).where(params.data || {}).get()
+            .then(res => {
+              wx.hideLoading();
+              resolve(res.data)
+            })
+      }
+
+    })
+  },
+// 获取工作经历列表
   getWorkList(){
     return new Promise(resolve => {
       if(this.workList){
         resolve( this.workList)
       }else {
-        this.globalData.db.collection('work').get().then(res => {
-          this.workList = res.data
-          resolve(res.data)
+        this.requestDB({
+          collectionName:'work'
+        }).then(res =>{
+          this.workList = res;
+          resolve(res)
         })
       }
     })
@@ -25,9 +49,11 @@ App({
       if(this.projectList){
         resolve( this.projectList)
       }else {
-        this.globalData.db.collection('project').get().then(res => {
-          this.projectList = res.data;
-          resolve(res.data)
+        this.requestDB({
+          collectionName:'project'
+        }).then(res =>{
+          this.projectList = res;
+          resolve(res)
         })
       }
     })
@@ -38,15 +64,16 @@ App({
       if(this.designList){
         resolve( this.designList)
       }else {
-        this.globalData.db.collection('graphicDesign').get().then(res => {
-          this.designList = res.data;
-          resolve(res.data)
+        this.requestDB({
+          collectionName:'graphicDesign'
+        }).then(res =>{
+          this.designList = res;
+          resolve(res)
         })
       }
     })
   },
   globalData: {
-    db:null,
     userInfo: null,
     workList:null,
     projectList:null,

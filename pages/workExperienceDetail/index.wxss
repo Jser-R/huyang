@@ -198,6 +198,11 @@
 
 
 /********************项目图片***********************/
+.workProgramDetail{
+    min-height: 1000rpx;
+    margin-bottom: 100rpx;
+}
+
 .workProgramDetail image{
     width: 100%;
     vertical-align: middle;
