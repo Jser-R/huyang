@@ -1,0 +1,10 @@
+<!--components/tabbar/index.wxml-->
+<view class="tabbarCom f22 bold">
+  <block wx:for="{{tabbarData}}" wx:key="{{index}}">
+    <view class="tabbarComItem t_center" catchtap="toView" data-item="{{item}}">
+      <image src="{{'/images/icon/'+item.icon+'.png'}}" mode="widthFix"></image>
+      <text >{{item.name}}</text>
+    </view>
+  </block>
+
+</view>

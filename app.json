@@ -1,14 +1,15 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/workExperienceDetail/index",
-        "pages/workProgramDetail/index",
-        "pages/projectDetail/index"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#000",
-        "navigationBarTitleText": "Hello!everybody",
-        "navigationBarTextStyle": "white"
-    }
+  "pages": [
+    "pages/index/index",
+    "pages/workExperienceDetail/index",
+    "pages/workProgramDetail/index",
+    "pages/projectDetail/index",
+    "pages/resumeDetail/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "Hello!everybody",
+    "navigationBarTextStyle": "white"
+  }
 }

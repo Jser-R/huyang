@@ -92,7 +92,7 @@ Page({
   slideUpVersion(e) {
     const item = e.target.dataset.item;
     const index = e.target.dataset.index;
-    const obj = 'WorkExperienceDetail.programArr[' + index + '].hidden';
+    const obj = 'workListItem.WorkExperienceDetail.programArr[' + index + '].hidden';
     if (item.hidden) {
       this.setData({
         [obj]: false
@@ -107,7 +107,7 @@ Page({
     const index = e.target.dataset.index;
     const activeIndex = Math.floor(scrollLeft / 180) + 1;
     if (activeIndex !== item.activeIndex) {
-      const obj = 'WorkExperienceDetail.programArr[' + index + '].activeIndex';
+      const obj = 'workListItem.WorkExperienceDetail.programArr[' + index + '].activeIndex';
       this.setData({
         [obj]: activeIndex
       })
@@ -124,13 +124,9 @@ Page({
   previewImage(e) {
     const images = e.currentTarget.dataset.images;
     const imageIndex = e.currentTarget.dataset.imageIndex;
-    const urls = images.map(item => {
-      return item.image
-    });
-    // console.log(e.currentTarget.dataset)
     wx.previewImage({
-      current: urls[imageIndex],
-      urls: urls
+      current: images[imageIndex],
+      urls: images
     })
   },
   //展示项目详情

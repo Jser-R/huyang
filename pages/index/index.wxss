@@ -36,7 +36,8 @@
 .topWrap .inner .content image{
   width: 230rpx;
   height: 44rpx;
-  margin-bottom: 24rpx
+  margin-bottom: 24rpx;
+  vertical-align: middle;
 }
 
 .topWrap .inner .content view{
@@ -70,8 +71,8 @@
 }
 
 /* 内容区 */
-.content{
-  margin-bottom: 80rpx
+.contentWrap .content{
+  margin-bottom: 60rpx
 }
 /* 问和答 */
 .QAList{
@@ -82,7 +83,7 @@
 }
 
 .QAList view{
-  background:no-repeat left center;
+  background:#fff no-repeat left center;
   background-size:cover;
   width: 670rpx;
   height: 210rpx;
@@ -127,14 +128,23 @@
 }
 
 /*导航区*/
+.navFixed{
+  position: fixed;
+  left: 0;
+  top:0;
+  box-shadow:0 2rpx 20rpx 0 rgba(0,0,0,0.1);
+}
 .nav{
-  padding:20rpx 70rpx 0;
+  width: 100%;
+  padding:40rpx 70rpx 0;
+  background: #fff;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
 
 }
 .nav view{
-  padding-bottom: 60rpx;
+  padding-bottom: 48rpx;
   /* transition: .3s */
 }
 .nav .active{

@@ -2,6 +2,7 @@
   "usingComponents": {
     "menu":"/components/menu/index",
     "noData":"/components/noData/index",
+    "tabbar":"/components/tabbar/index",
     "otherProject":"/components/otherProject/index"
   }
   

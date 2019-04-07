@@ -59,10 +59,14 @@
                  wx:for-item="image"
                  wx:for-index="imageIndex"
                  wx:key="{{imageIndex}}">
-            <view class="imageItem">
+            <view class="imageItem item">
               <image src="{{image}}" lazy-load></image>
             </view>
           </block>
+          <view class="lastItem item f26 t_center">
+            <image src="/images/icon/coffee.png"></image>
+            <view><text class="bold">STOP</text>到头啦～</view>
+          </view>
         </scroll-view>
       </block>
 
@@ -72,13 +76,20 @@
     <!--工作内容-->
     <view class="workContentWrap wrap">
       <view class="h2">工作内容</view>
-      <view class="content  clearfix">
-        <rich-text class="f28 grey9 {{workListItem.WorkExperienceDetail.hiddenWorkDetail?'fourClamp':''}}"
-                   nodes="{{workListItem.WorkExperienceDetail.workDetail}}"></rich-text>
+      <view class="content f28 grey9 clearfix">
+        <block  wx:for="{{workListItem.WorkExperienceDetail.workDetailArr}}"  wx:key="{{index}}">
+          <view>{{item}}</view>
 
-        <view class="more r f28" bindtap="showWorkDetail"
-              hidden="{{!workListItem.WorkExperienceDetail.hiddenWorkDetail}}">MORE
+        </block>
+        <view>
+
         </view>
+<!--        <rich-text class="f28 grey9 {{workListItem.WorkExperienceDetail.hiddenWorkDetail?'fourClamp':''}}"-->
+<!--                   nodes="{{workListItem.WorkExperienceDetail.workDetail}}"></rich-text>-->
+
+<!--        <view class="more r f28" bindtap="showWorkDetail"-->
+<!--              hidden="{{!workListItem.WorkExperienceDetail.hiddenWorkDetail}}">MORE-->
+<!--        </view>-->
       </view>
     </view>
     <view class="line-block"></view>
@@ -100,7 +111,7 @@
       <view class="h2">项目详情</view>
       <block wx:for="{{programDetail}}" wx:key="{{index}}">
         <view class="programItem">
-          <view class="title"
+          <view class="title {{item.hidden?'':'slideUp'}}"
                 bindtap="showProgram"
                 data-item="{{item}}"
                 data-index="{{index}}">{{item.name}}
@@ -120,7 +131,7 @@
                     <view class="imgWrap"
                           bindtap="previewImage"
                           data-image-index="{{imageIndex}}"
-                          data-images="{{item.moduleImages}}">
+                          data-images="{{item.originalImages}}">
                       <image src="{{imageItem.image}}" lazy-load></image>
                     </view>
                   </view>

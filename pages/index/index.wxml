@@ -4,9 +4,7 @@
     <view class='avatar'></view>
 
     <view class="content t_center">
-      <view>
-        <image src="/images/homePage/name.png" lazy-load/>
-      </view>
+      <image src="/images/homePage/name.png" lazy-load/>
       <view class='f28 bold'>5年+工作经验</view>
       <view class='f24'>“正确的做设计”比“做正确的设计重要的多”</view>
     </view>
@@ -40,7 +38,8 @@
     </view>
   </view>
 
-  <view class="nav f28 grey9">
+  <view class="nav f28 grey9 {{navFixed?'navFixed':''}}"
+        id="nav">
     <block wx:for="{{nav}}"
            wx:key="{{index}}">
       <view class="{{navIndex === index?'active':''}}"
@@ -95,5 +94,5 @@
 
 
 <noData></noData>
-
+<tabbar></tabbar>
 <!--<menu></menu>-->

@@ -89,21 +89,35 @@
     top:0;
     color: #000;
 }
-.versionsSwiper .scrollX .imageItem{
+.versionsSwiper .scrollX .item{
     display: inline-block;
+    width: 376rpx;
+    height: 664rpx;
     padding: 30rpx 15rpx;
+    vertical-align: middle;
 }
 .versionsSwiper .scrollX .imageItem:first-child{
     padding: 30rpx 15rpx  30rpx 38rpx;
 }
-.versionsSwiper .scrollX .imageItem:last-child{
-    padding: 30rpx 300rpx  30rpx 15rpx;
-}
+/*.versionsSwiper .scrollX .imageItem:last-child{*/
+/*    padding: 30rpx 300rpx  30rpx 15rpx;*/
+/*}*/
 .versionsSwiper .scrollX .imageItem image{
     width: 376rpx;
     height: 664rpx;
     border-radius: 20rpx;
     box-shadow:0 4rpx 20rpx 0 rgba(0,0,0,0.1);
+}
+
+.versionsSwiper .scrollX .lastItem {
+    /*display: inline-block;*/
+    width: 266rpx;
+}
+
+.versionsSwiper .scrollX .lastItem image{
+    margin: 266rpx 0 20rpx;
+    width: 62rpx;
+    height: 84rpx;
 }
 
 /*工作内容 整体页面展示 项目详情公用样式*/
@@ -126,6 +140,9 @@
 
 }
 /*工作内容*/
+.workContentWrap .content{
+    line-height: 50rpx;
+}
 .workContentWrap .more{
     margin-top: 30rpx;
     padding-right: 36rpx;
@@ -163,7 +180,12 @@
     color:#666666;
     font-size: 32rpx;
 }
-
+.programItem .title.slideUp{
+    background: url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/icon_discovery.png") no-repeat 40rpx 30rpx,
+    url("https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/icons/arrow_up_grey.png") no-repeat 612rpx center,
+    #F7F8FA ;
+    background-size: 48rpx,19rpx;
+}
 
 .programItem .scrollX{
     margin: 0 -40rpx;

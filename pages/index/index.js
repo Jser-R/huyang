@@ -1,10 +1,13 @@
 //index.js
 //获取应用实例
 const app = getApp();
+// const navTop=0;
 Page({
   data: {
     //是否从工作经历、项目经历、平面设计内跳转过来
     isFromDetail:false,
+    navTop:0,
+    navFixed:false,
     navIndex: 0,
     nav: [
       {name: '工作经历'},
@@ -49,8 +52,31 @@ Page({
   onShow(){
     if(this.data.isFromDetail){
       wx.pageScrollTo({
-        scrollTop: 500,
+        scrollTop: this.data.navTop,
         duration: 0
+      })
+    }
+    if(!this.data.navTop){
+      const _this=this;
+      const query = wx.createSelectorQuery();
+      query.select('#nav').boundingClientRect();
+      query.exec( function (res){
+        console.log(res,res[0].top);
+        _this.setData({
+          navTop: res[0].top
+        });
+      });
+    }
+
+  },
+  onPageScroll: function (e) {
+    if (e.scrollTop > this.data.navTop){
+      this.setData({
+        navFixed: true
+      })
+    }else {
+      this.setData({
+        navFixed: false
       })
     }
   },
@@ -74,6 +100,10 @@ Page({
   },
   changeNav(e) {
     const index = e.target.dataset.index;
+    wx.pageScrollTo({
+      scrollTop: this.data.navTop,
+      duration: 0
+    })
     this.setData({
       navIndex: index
     })
@@ -101,6 +131,7 @@ Page({
   },
   resetIsFromDetail(){
     this.setData({
+      // navFixed:false,
       isFromDetail:false
     })
   },

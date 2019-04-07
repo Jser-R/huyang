@@ -1,0 +1,38 @@
+/* components/tabbar/index.wxss */
+@import "/app.wxss";
+
+.tabbarCom{
+  width:404rpx;
+  height:108rpx;
+  line-height: 108rpx;
+  background:#fff;
+  box-shadow:0 2rpx 20rpx 0 rgba(0,0,0,0.1);
+  border-radius:54rpx;
+  position: fixed;
+  left: 50%;
+  margin-left: -202rpx;
+  bottom:120rpx;
+  display: flex;
+}
+.tabbarCom:after{
+  content: "";
+  width:2rpx;
+  height:46rpx;
+  background: #e9e9e9;
+  position: absolute;
+  left: 50%;
+  top:30rpx;
+}
+
+.tabbarComItem{
+  flex: 1;
+}
+.tabbarComItem image{
+  width: 46rpx;
+  margin-right: 8rpx;
+
+}
+.tabbarComItem image,.tabbarComItem text{
+  display: inline-block;
+  vertical-align: middle;
+}
