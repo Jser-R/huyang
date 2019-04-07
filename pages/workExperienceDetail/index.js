@@ -6,10 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: '',
-    workId: '',
-    isOnline: false,
-    WorkExperienceDetail: {},
+    // id: '',
+    // workId: '',
+    // isOnline: false,
+    workListItem:{},
+    // WorkExperienceDetail: {},
     programDetail: [],
     workProgramImages: [],
     workList: []
@@ -47,9 +48,10 @@ Page({
     }).then(res => {
       const data = res[0];
       this.setData({
-        id: data._id,
-        WorkExperienceDetail: data.WorkExperienceDetail,
-        isOnline: data.isOnline
+        workListItem:data,
+        // id: data._id,
+        // WorkExperienceDetail: data.WorkExperienceDetail,
+        // isOnline: data.isOnline
       });
       if (data.WorkExperienceDetail.programArr) {
         // 需要展示项目内容
@@ -115,7 +117,7 @@ Page({
   //展示全部工作内容
   showWorkDetail() {
     this.setData({
-      ['WorkExperienceDetail.hiddenWorkDetail']: false
+      ['workListItem.WorkExperienceDetail.hiddenWorkDetail']: false
     })
   },
   // 查看大图
@@ -163,7 +165,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage(res) {
+    return {
+      title: this.data.workListItem.WorkExperienceDetail.companyName,
+      imageUrl:this.data.workListItem.image
+    }
   }
-})
+});

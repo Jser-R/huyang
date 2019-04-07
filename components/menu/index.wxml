@@ -5,7 +5,9 @@
 <!-- 菜单按钮 -->
 <view class="menu">
     <block wx:for="{{menuList}}" wx:key='{{index}}'>
-        <view class="menu_li {{animationFlag?'showMask':'hideMask'}}">
+        <view class="menu_li {{animationFlag?'showMask':'hideMask'}}"
+              data-item="{{item}}"
+              catchtap="_toView">
             <text class="f28">{{item.name}}</text>
             <image class="menu_icon"  src='{{"/images/icon/"+item.icon}}' ></image>
         </view>
@@ -13,4 +15,4 @@
     </block>
 </view>
 <image class="menu_btn  {{animationFlag?'rotate180':'rotate90'}} "
-       catchtap='toggleMenu' src='/images/icon/menu.png' ></image>
+       catchtap='_toggleMenu' src='/images/icon/menu.png' ></image>

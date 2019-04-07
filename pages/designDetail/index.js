@@ -6,8 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: '',
-    imagesArr: [],
+    // id: '',
+    designDetail:{},
+    // imagesArr: [],
     designList: []
   },
 
@@ -36,7 +37,8 @@ Page({
       id: id
     }).then(res => {
       this.setData({
-        imagesArr: res.images
+        designDetail:res
+        // imagesArr: res.images
       })
     })
   },
@@ -58,6 +60,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: this.data.designDetail.name,
+      imageUrl:this.data.designDetail.image
+    }
   }
 })

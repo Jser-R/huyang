@@ -7,7 +7,8 @@ Page({
    */
   data: {
     id: "",
-    imagesArr: [],
+    projectDetail:{},
+    // imagesArr: [],
     projectList: []
   },
 
@@ -23,9 +24,9 @@ Page({
 
   },
   onLoad: function (options) {
-    this.setData({
-      id: options.id
-    });
+    // this.setData({
+    //   id: options.id
+    // });
     this.getProgramDetail(options.id)
   },
   //获取项目列表
@@ -36,7 +37,7 @@ Page({
       id: id
     }).then(res => {
       this.setData({
-        imagesArr: res.images
+        projectDetail: res
       })
     })
     // app.globalData.db.collection('project').doc(id).get().then(res => {
@@ -62,7 +63,10 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage(res) {
+    return {
+      title: this.data.projectDetail.name,
+      imageUrl:this.data.projectDetail.image
+    }
   }
 })

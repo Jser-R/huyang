@@ -3,14 +3,14 @@
   <!--公司内容-->
   <view class="topWrap">
     <view class="top">
-      <image class="logo l" src="{{WorkExperienceDetail.logo}}"></image>
-      <view class="f36 bold title">{{WorkExperienceDetail.companyName}}
-        <text wx:if="{{isOnline}}" class="f24">（已上线）</text>
+      <image class="logo l" src="{{workListItem.WorkExperienceDetail.logo}}"></image>
+      <view class="f36 bold title">{{workListItem.WorkExperienceDetail.companyName}}
+        <text wx:if="{{workListItem.isOnline}}" class="f24">（已上线）</text>
       </view>
-      <view class="f26">{{WorkExperienceDetail.position}}</view>
+      <view class="f26">{{workListItem.WorkExperienceDetail.position}}</view>
     </view>
     <view class="bot">
-      <block wx:for="{{WorkExperienceDetail.companyArr}}" wx:key="{{index}}">
+      <block wx:for="{{workListItem.WorkExperienceDetail.companyArr}}" wx:key="{{index}}">
         <view class="item t_center">
           <view class="f28 bold">{{item.value}}</view>
           <view class="f24 grey9">{{item.key}}</view>
@@ -38,7 +38,7 @@
   <view class="contentWrap">
     <!--作品内容区-->
     <view class="versionsSwiper">
-      <block wx:for="{{WorkExperienceDetail.programArr}}" wx:key="{{index}}">
+      <block wx:for="{{workListItem.WorkExperienceDetail.programArr}}" wx:key="{{index}}">
         <view class="programVersion f26 grey9"
               bindtap="slideUpVersion"
               data-item="{{item}}"
@@ -73,11 +73,11 @@
     <view class="workContentWrap wrap">
       <view class="h2">工作内容</view>
       <view class="content  clearfix">
-        <rich-text class="f28 grey9 {{WorkExperienceDetail.hiddenWorkDetail?'fourClamp':''}}"
-                   nodes="{{WorkExperienceDetail.workDetail}}"></rich-text>
+        <rich-text class="f28 grey9 {{workListItem.WorkExperienceDetail.hiddenWorkDetail?'fourClamp':''}}"
+                   nodes="{{workListItem.WorkExperienceDetail.workDetail}}"></rich-text>
 
         <view class="more r f28" bindtap="showWorkDetail"
-              hidden="{{!WorkExperienceDetail.hiddenWorkDetail}}">MORE
+              hidden="{{!workListItem.WorkExperienceDetail.hiddenWorkDetail}}">MORE
         </view>
       </view>
     </view>
@@ -89,7 +89,7 @@
         <text>（点击查看大图）</text>
       </view>
       <view class="content" bindtap="toProgramDetail">
-        <image src="{{WorkExperienceDetail.mainImagePath}}" lazy-load></image>
+        <image src="{{workListItem.WorkExperienceDetail.mainImagePath}}" lazy-load></image>
 
       </view>
     </view>
@@ -146,7 +146,7 @@
 
 <otherProject title="其他工作经历"
               list="{{workList}}"
-              itemId="{{id}}"
+              itemId="{{workListItem._id}}"
               bind:toNewItem="toNewItem"></otherProject>
 
 

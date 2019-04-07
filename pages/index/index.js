@@ -1,10 +1,10 @@
 //index.js
 //获取应用实例
-const app = getApp()
-const IMAGE_INDEX = 'https://6465-dev-d6b769-1258442598.tcb.qcloud.la/images/';
-const imgUrl = IMAGE_INDEX + 'work/包拯/pic_01.png';
+const app = getApp();
 Page({
   data: {
+    //是否从工作经历、项目经历、平面设计内跳转过来
+    isFromDetail:false,
     navIndex: 0,
     nav: [
       {name: '工作经历'},
@@ -23,7 +23,13 @@ Page({
     designList: []
   },
 
-  onLoad: function () {
+  onLoad: function (options) {
+    if(options.navIndex){
+      this.setData({
+        navIndex:Number(options.navIndex)
+      })
+    }
+
     app.getWorkList().then(workList => {
       this.setData({
         workList: workList
@@ -40,7 +46,14 @@ Page({
       })
     });
   },
-
+  onShow(){
+    if(this.data.isFromDetail){
+      wx.pageScrollTo({
+        scrollTop: 500,
+        duration: 0
+      })
+    }
+  },
   changeQA(e) {
     const index = e.currentTarget.dataset.index;
     const key = 'QAList[' + index + '].drop';
@@ -67,20 +80,33 @@ Page({
   },
   toWorkExperienceDetail(e) {
     const item = e.currentTarget.dataset.item;
+    this.resetIsFromDetail();
     wx.navigateTo({
       url: '/pages/workExperienceDetail/index?workId=' + item.workId,
     })
   },
   toProjectDetail(e) {
     const item = e.currentTarget.dataset.item;
+    this.resetIsFromDetail();
     wx.navigateTo({
       url: '/pages/projectDetail/index?id=' + item._id,
     })
   },
   toDesignDetail(e) {
     const item = e.currentTarget.dataset.item;
+    this.resetIsFromDetail();
     wx.navigateTo({
       url: '/pages/designDetail/index?id=' + item._id,
     })
+  },
+  resetIsFromDetail(){
+    this.setData({
+      isFromDetail:false
+    })
+  },
+  onShareAppMessage(res) {
+    return {
+      title: '胡小胡的设计杂货铺'
+    }
   }
 })
