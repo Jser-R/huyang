@@ -2,27 +2,30 @@
 @import "/app.wxss";
 
 .tabbarCom{
-  width:404rpx;
-  height:108rpx;
-  line-height: 108rpx;
+  /*width:380rpx;*/
+  height:88rpx;
+  line-height: 88rpx;
   background:#fff;
   box-shadow:0 2rpx 20rpx 0 rgba(0,0,0,0.1);
   border-radius:54rpx;
   position: fixed;
-  left: 50%;
-  margin-left: -202rpx;
-  bottom:120rpx;
+  right: 60rpx;
+  /*margin-left: -190rpx;*/
+  bottom:60rpx;
   display: flex;
 }
-.tabbarCom:after{
-  content: "";
-  width:2rpx;
-  height:46rpx;
-  background: #e9e9e9;
-  position: absolute;
-  left: 50%;
-  top:30rpx;
+.tabbarCom{
+  width: 200rpx;
 }
+/*.tabbarCom:after{*/
+  /*content: "";*/
+  /*width:2rpx;*/
+  /*height:26rpx;*/
+  /*background: #e9e9e9;*/
+  /*position: absolute;*/
+  /*left: 50%;*/
+  /*top:30rpx;*/
+/*}*/
 
 .tabbarComItem{
   flex: 1;

@@ -14,7 +14,7 @@ Component({
       {name: '工作经历', icon: 'menu_01.png'},
       {name: '项目经历', icon: 'menu_02.png'},
       {name: '平面设计', icon: 'menu_03.png'},
-      // {name: '个人简历', icon: 'menu_04.png'},
+      {name: '个人简历', icon: 'menu_04.png'},
     ]
   },
 
@@ -55,11 +55,10 @@ Component({
           navIndex = 2;
           break;
         case '个人简历':
-          wx.showToast({
-            title: '敬请期待',
-            icon:'none'
+          wx.navigateTo({
+            url: '/pages/resumeDetail/index'
           });
-          break;
+          return;
       }
       let pages = getCurrentPages();
       let prevPage = pages[pages.length - 2];

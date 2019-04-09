@@ -1,1 +1,5 @@
 /* pages/resumeDetail/index.wxss */
+.resume image{
+  width: 100%;
+  vertical-align: middle;
+}

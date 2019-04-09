@@ -1,2 +1,15 @@
 <!--pages/resumeDetail/index.wxml-->
-<view class="t_center f28">个人简历</view>
+
+<view class="resume">
+  <image src="/images/resumeDetail/01.png" lazy-load  mode="widthFix"></image>
+  <image src="/images/resumeDetail/02.png" lazy-load  mode="widthFix"></image>
+  <image src="/images/resumeDetail/03.png" lazy-load  mode="widthFix"></image>
+  <image src="/images/resumeDetail/04.png" lazy-load  mode="widthFix"></image>
+</view>
+
+
+
+
+
+<!--<tabbar></tabbar>-->
+

@@ -12,7 +12,7 @@ Component({
    */
   data: {
     tabbarData:[
-      {name:'UI作品',icon:'tabbar_01'},
+      // {name:'UI作品',icon:'tabbar_01'},
       {name:'我的简历',icon:'tabbar_02'}
     ]
   },
@@ -25,7 +25,7 @@ Component({
       const item = e.currentTarget.dataset.item;
       const pages = getCurrentPages(); //获取加载的页面
       const currentPage = pages[pages.length-1];//获取当前页面的对象
-      console.log(currentPage)
+      // console.log(currentPage)
       let url = '';
       switch (item.name) {
         case "UI作品":

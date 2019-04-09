@@ -53,7 +53,7 @@ Page({
     if(this.data.isFromDetail){
       wx.pageScrollTo({
         scrollTop: this.data.navTop,
-        duration: 0
+        duration: 300
       })
     }
     if(!this.data.navTop){
@@ -102,7 +102,7 @@ Page({
     const index = e.target.dataset.index;
     wx.pageScrollTo({
       scrollTop: this.data.navTop,
-      duration: 0
+      duration: 300
     })
     this.setData({
       navIndex: index

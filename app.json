@@ -4,6 +4,7 @@
     "pages/workExperienceDetail/index",
     "pages/workProgramDetail/index",
     "pages/projectDetail/index",
+    "pages/designDetail/index",
     "pages/resumeDetail/index"
   ],
   "window": {

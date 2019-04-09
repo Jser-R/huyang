@@ -8,3 +8,9 @@
   </block>
 
 </view>
+
+
+<!--<view class="tabbarComItem " catchtap="toView" data-item="{{item}}">-->
+  <!--<image src='/images/icon/tabbar_02.png' mode="widthFix"></image>-->
+  <!--<text >{{item.name}}</text>-->
+<!--</view>-->

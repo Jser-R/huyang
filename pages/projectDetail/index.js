@@ -48,7 +48,7 @@ Page({
   },
   // 查看大图
   previewImage(e) {
-    const urls = this.data.imagesArr;
+    const urls = this.data.projectDetail.images;
     const current = e.currentTarget.dataset.item;
     wx.previewImage({
       current: current,
